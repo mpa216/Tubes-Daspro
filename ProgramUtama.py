@@ -1,4 +1,4 @@
-def lenght(x):
+def length(x):
     i, sum=0,0
     while i!=103:
         if x[i]!=str('inf'): sum+=1
