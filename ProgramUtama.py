@@ -1,6 +1,5 @@
 def length(x):
-    i, sum=0,0
-    while i!=103:
+    sum=0
+    for i in range (103):
         if x[i]!=str('inf'): sum+=1
-        i+=1
     return sum
