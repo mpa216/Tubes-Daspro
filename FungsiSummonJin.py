@@ -1,4 +1,4 @@
-def jenis_jin():
+def SummonJin():
     from ProgramUtama import length, mappend
     x = int(input("Masukkan nomor jenis jin yang ingin dipanggil: "))
     username_jintotal = ['inf' for i in range (103)]
