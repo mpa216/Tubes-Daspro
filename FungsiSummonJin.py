@@ -1,11 +1,6 @@
-def SummonJin():
+def jenis_jin(username_jintotal, username_jinpembangun, password_jinpembangun, username_jinpengumpul, password_jinpengumpul):
     from ProgramUtama import length, mappend
     x = int(input("Masukkan nomor jenis jin yang ingin dipanggil: "))
-    username_jintotal = ['inf' for i in range (103)]
-    username_jinpembangun = ['inf' for i in range (103)]
-    password_jinpembangun = ['inf' for i in range (103)]
-    username_jinpengumpul = ['inf' for i in range (103)]
-    password_jinpengumpul = ['inf' for i in range (103)]
     tambah = False
     while not (x==1 or x==2):
         print(f'Tidak ada jenis jin bernomor "{x}"')
@@ -42,7 +37,5 @@ def SummonJin():
                 j+=1
         if tambah:
                 return mappend(username_jinpembangun, uname_pembangun), mappend(username_jintotal, uname_pembangun), mappend(password_jinpembangun, pass_pembangun)
- 
     else:
         return False
-    
