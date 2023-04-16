@@ -10,7 +10,7 @@ def jenis_jin(username_jintotal, username_jinpembangun, password_jinpembangun, u
         uname_pengumpul = str(input("Masukkan username jin: "))
         pass_pengumpul = str(input("Masukkan password jin: "))
         j=0
-        while j<103:
+        while j<length(username_jinpengumpul):
             if username_jinpengumpul[j]==uname_pengumpul:
                 print(f'Username "{uname_pengumpul}" sudah diambil!')
                 uname_pengumpul = str(input("Masukkan username jin: "))
@@ -26,7 +26,7 @@ def jenis_jin(username_jintotal, username_jinpembangun, password_jinpembangun, u
         uname_pembangun = str(input("Masukkan username jin: "))
         pass_pembangun = str(input("Masukkan password jin: "))
         j=0
-        while j<103:
+        while j<length(username_jinpembangun):
             if username_jinpembangun[j]==uname_pembangun:
                 print(f'Username "{uname_pembangun}" sudah diambil!')
                 uname_pembangun = str(input("Masukkan username jin: "))
