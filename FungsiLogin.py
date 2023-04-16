@@ -14,7 +14,6 @@ def login(nama_file,udhlogin):
                         print(f'Selamat datang, {username_login}!', "\nMasukkan command “help” untuk daftar command yang dapat kamu panggil.")
                         with open("LoginTerakhir.csv",'w',encoding='utf-8') as datalogin:
                             datalogin.write(f'{username_login},{udhlogin}')
-                        return udhlogin
                     else:
                         kondisi = ("Password salah!")
                         break
