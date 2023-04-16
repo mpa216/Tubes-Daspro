@@ -6,12 +6,12 @@ def login(nama_file,udhlogin):
         file = csv.reader(user, delimiter=";")
         gabungan_data = [next(file) for i in range(3)]
         username_login, password_login = str(input("Username: ")), str(input("Password: "))
-        if not udhlogin:
+        while not udhlogin:
             for i in range (1,3):
                 if gabungan_data[i][0]==username_login:
                     if gabungan_data[i][1]==password_login:
                         udhlogin = True
-                        print(f'Selamat datang, {username_login}!\nMasukkan command “help” untuk daftar command yang dapat kamu panggil.')
+                        print(f'Selamat datang, {username_login}!', "\nMasukkan command “help” untuk daftar command yang dapat kamu panggil.")
                         with open("LoginTerakhir.csv",'w',encoding='utf-8') as datalogin:
                             datalogin.write(f'{username_login},{udhlogin}')
                         return udhlogin
@@ -21,5 +21,6 @@ def login(nama_file,udhlogin):
                 else:
                     kondisi =("Username tidak terdaftar!")
             print(kondisi)
-        else:
+            username_login, password_login = str(input("Username: ")), str(input("Password: "))
+        if udhlogin:
             print(f"Anda telah login dengan username {loginterakhir[0][0]}, silahkan lakukan “logout” sebelum melakukan login kembali.")
