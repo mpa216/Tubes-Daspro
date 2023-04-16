@@ -22,5 +22,4 @@ def login(nama_file,udhlogin):
                     kondisi =("Username tidak terdaftar!")
             print(kondisi)
         else:
-            with open("LoginTerakhir.csv",'r') as datalogin:
-                print(f"Anda telah login dengan username {loginterakhir[0][0]}, silahkan lakukan “logout” sebelum melakukan login kembali.")
+            print(f"Anda telah login dengan username {loginterakhir[0][0]}, silahkan lakukan “logout” sebelum melakukan login kembali.")
