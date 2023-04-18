@@ -9,6 +9,7 @@ IDcanditiapjin = [] # Ini array 2 dimensi ex. [[12, 31, 32], [2, 1], [100], ...]
 # ini berfungsi untuk mentrack jumlah idcandi yg dibuat oelh tiap jin, mengingat bahwa satu jin dapat membuat lebih dari 1 Candi
 IDcanditotal = [] # Ini array 1 dimensi, yg merupakan versi simple dari IDcanditiapjin, berfungsi untuk mentrack IDcandi yg berhasil dibuat tanpa mementingkan siapa pendiri dari candi tersebut
 bahancanditiapjin = [] # Ini array 2 dimensi ex. [[120, 200, 300], [50, 20 , 200] ...] isinya integer dengan format [[pasir, air, batu]]
+totalbahan = [] # ini array 1 dimensi dengan formar [pasir, air, batu]
 useraktif = "" # ini berisi username dari pengguna yg aktif, if useraktif == Bandung : ...... elif useraktif == Roro : ....... else #jin : ......
 
 
