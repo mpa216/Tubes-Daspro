@@ -44,4 +44,3 @@ def bangun(totalbahan):
     else :
         print("Bahan bangunan tidak mencukupi.")
         print("Candi tidak bisa dibangun!")
-
