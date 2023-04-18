@@ -1,7 +1,8 @@
 def length(x):
-    sum=0
-    for i in range (103):
-        if x[i]!=float('inf'): sum+=1
+    i, sum=0,0
+    while i!=103:
+        if x[i] != str('inf'): sum+=1
+        i +=1
     return sum
 
 def mappend(arr, c):
