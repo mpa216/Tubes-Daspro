@@ -7,7 +7,7 @@ usernameselainlain = ["Bandung", "Roro"]
 passwordselainlain = ["Bondowoso", "Jonggrang"]
 IDcanditiapjin = [] # Ini array 2 dimensi ex. [[12, 31, 32], [2, 1], [100], ...] misal isi string [12, 31, 32] menandakan IDcandi yg dibuat oleh jin dengan index [0], 
 # ini berfungsi untuk mentrack jumlah idcandi yg dibuat oelh tiap jin, mengingat bahwa satu jin dapat membuat lebih dari 1 Candi
-IDcanditotal = [i for i in range(1, 101)] # Ini array 1 dimensi, yg merupakan versi simple dari IDcanditiapjin, berfungsi untuk menyimpan data idcandi yg belum dibuat
+IDcanditotal = [i for i in range(1, 101)] # Ini array 1 dimensi, yg berfungsi untuk menyimpan daftrar data idcandi yg belum dibuat
 IDcandidibuat = [] # ini array 1 deimsi, yg menyimpan data mengenai IDcandi yg sudah taken/dibuat
 bahancanditiapjin = [] # Ini array 2 dimensi ex. [[120, 200, 300], [50, 20 , 200] ...] isinya integer dengan format [[pasir, air, batu]]
 totalbahan = [] # ini array 1 dimensi dengan formar [pasir, air, batu]
