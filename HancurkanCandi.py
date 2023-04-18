@@ -14,8 +14,10 @@ def HancurkanCandi(arrCandi):
             if (jawab == "Y") or (jawab == "y"):
                 arrCandi[i] = float('inf')
                 print("Candi telah berhasil dihancurkan.")
+                break
             elif (jawab == "N") or (jawab == "n"):
                 print("Candi tidak jadi dihancurkan.")
+                break
         else:
             if (i == jumlahCandi-1):
                 print("Tidak ada candi dengan ID tersebut.")
