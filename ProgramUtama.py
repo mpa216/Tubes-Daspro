@@ -28,3 +28,23 @@ def mappend(arr, c):
         new_arr[i] = arr[i]
     new_arr[length(arr)] = c
     return new_arr
+
+def my_max(seq):
+    if len(seq) == 0:
+        raise ValueError("max() arg is an empty sequence")
+    else:
+        max_val = seq[0]
+        for val in seq:
+            if val > max_val:
+                max_val = val
+        return max_val
+
+def my_min(seq):
+    if len(seq) == 0:
+        raise ValueError("min() arg is an empty sequence")
+    else:
+        min_val = seq[0]
+        for val in seq:
+            if val < min_val:
+                min_val = val
+        return min_val
