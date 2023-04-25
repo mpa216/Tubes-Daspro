@@ -27,3 +27,10 @@ def my_split(string, delimiter=None):
         if i == len(string) - 1:
             result = mappend(result, current_word)
     return result
+
+def del_element(arr, index):
+    new_arr = []
+    for i in range(len(arr)):
+        if i != index:
+            new_arr.append(arr[i])
+    return new_arr
