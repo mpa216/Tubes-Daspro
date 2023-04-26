@@ -1,9 +1,7 @@
 import random
 import FungsiUtama
 
-useraktif = "jin ifrit" # Musti diisin dengan user yg sedang aktif, nama jin ifrit disini hanya contoh
-
-def bangun():
+def bangun(useraktif):
     # !!! Note, untuk fungsi ini file csv harus bersih dari whitespace demi menghindari error !!!
     ids = extract(0, "candi.csv")
     bahans = extract(2, "bahan_bangunan.csv") # 0 = pasir 1 = batu 2 = air
