@@ -39,18 +39,18 @@ def my_max(seq):
     if len(seq) == 0:
         raise ValueError("max() arg is an empty sequence")
     else:
-        max_val = seq[0]
+        max_val = int(seq[0])
         for val in range(len(seq)):
-            if seq[val] > max_val:
-                max_val = seq[val]
+            if int(seq[val]) > max_val:
+                max_val = int(seq[val])
         return max_val
 
 def my_min(seq):
     if len(seq) == 0:
         raise ValueError("min() arg is an empty sequence")
     else:
-        min_val = seq[0]
+        min_val = int(seq[0])
         for val in range(len(seq)):
-            if seq[val] < min_val:
-                min_val = seq[val]
+            if int(seq[val]) < min_val:
+                min_val = int(seq[val])
         return min_val
