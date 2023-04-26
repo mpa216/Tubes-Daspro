@@ -1,5 +1,5 @@
                                                           # VERSI        ROMBAK #
-arrUser     = [[0 for cols in range (3)] for rows in range(102)] # array 2 dimensi (3 x 102) dengan index 0-99 milik para jin, 100 dimiilki Bandung, 101 dimiliki Roro
+arrUser     = [[0 for cols in range (3)] for rows in range(102)] # array 2 dimensi (102 x 3) dengan index 0-99 milik para jin, 100 dimiilki Bandung, 101 dimiliki Roro
 # arrUser[x][0], arrUser[x][1], arrUser[x][2] = Username,Role, Password
 # Contoh [["Si Cakep","Jin Pembangun","Saya cakep"], ..... , ["Bandung","Antagonist", "Bondowoso"] ,["Roro","Protagonist", "Jonggrang"]]
 userAktif = "" # ini berisi username dari pengguna yg aktif, if useraktif == Bandung : ...... elif useraktif == Roro : ....... else #jin : ......
@@ -12,7 +12,7 @@ usernameJinPengumpul = [] # array 1 dimensi yang berisi nama-nama jin pengumpul 
 # Contoh ["Si Kuat", "Si Gigih", ....]
 passwordJinPengumpul = [] # array 1 dimensi yang berisi password-password jin pengumpul yang sudah ditandai dengan index
 # Contoh ["Saya kuat", "Saya gigih", ....]
-arrCandi    = [[0 for cols in range (5)] for rows in range(100)] # array 2 dimensi (5 x 100) dengan 
+arrCandi    = [[0 for cols in range (5)] for rows in range(100)] # array 2 dimensi (100 x 5) dengan 
 # arrCandi[x][0] = id candi, arrCandi[x][1] = Nama jin pembangunnya, arrCandi[x][2] = jumlah pasir/candi, arrCandi[x][3] = jumlah batu/candi, arrCandi[x][4] = jumlah air/candi
 # Contoh [[1,"Si Cakep",5,3,4],[2,"Si Hebat",4,3,5], ....]
 arrBahan    = [[0 for cols in range (3)] for rows in range(3)] # array 2 dimensi (3 x 3) dengan index 0,1,2 menunjukkan jumlah pasir,batu, air secara berturut
