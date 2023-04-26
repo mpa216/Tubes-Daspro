@@ -89,7 +89,7 @@ def update_bahan(pasir, batu, air) :
             elif columns[0] == 'batu':
                 columns[2] = str(batu) + '\n'
             elif columns[0] == 'air':
-                columns[2] = str(air) + '\n'
+                columns[2] = str(air)
 
             # Concatenate the columns using a loop
             line = ''
