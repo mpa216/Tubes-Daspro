@@ -1,14 +1,17 @@
 import random
 import FungsiUtama
 
+IDcandihapus = []
+
 def bangun(useraktif):
-    # !!! Note, untuk fungsi ini file csv harus bersih dari whitespace demi menghindari error !!!
+    # !!! pastikan file candi.csv bebas whitespace demi menghindari kesalahan output !!!
     ids = extract(0, "candi.csv")
     bahans = extract(2, "bahan_bangunan.csv") # 0 = pasir 1 = batu 2 = air
-    hapus = extract(0, "hapus.csv")
-    for i in range(len(hapus)) :
-        hapus[i] = int(hapus[i])
-    hapussort = my_sort(hapus)
+    #hapus = extract(0, "hapus.csv")
+    #for i in range(len(hapus)) :
+    #    hapus[i] = int(hapus[i])
+    #hapussort = my_sort(hapus)
+    hapussort = my_sort(IDcandihapus)
     pasir = random.randint(1, 5)
     batu = random.randint(1, 5)
     air = random.randint(1, 5)
@@ -30,7 +33,7 @@ def bangun(useraktif):
             else :
                 ygdibuat = int(hapussort[0])
                 hapussort = del_element(hapussort, 0)
-                update_hapus(hapussort)
+                #update_hapus(hapussort)
 
             
             id = str(ygdibuat)
