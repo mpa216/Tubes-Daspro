@@ -1,19 +1,9 @@
-# Semua user di akses dengan indeks, misal index 3 adalah jin ifrit, maka seluruh variable dengan indeks 3 adalah milik jin ifrit. 
-# misal passwordjin[3], jenisjin[3], IDcanditiapjin[3]. semua adalah properti dari jin ifrit
-usernamejin = [] # array ini isinya string ini tempat penyimpanan user name jin,
-passwordjin = [] # array ini isinya string
-jenisjin = [] # 0: pengumpul 1: pembangun, array ini isinya integer
-usernameselainlain = ["Bandung", "Roro"]
-passwordselainlain = ["Bondowoso", "Jonggrang"]
-IDcanditiapjin = [] # Ini array 2 dimensi ex. [[12, 31, 32], [2, 1], [100], ...] misal isi string [12, 31, 32] menandakan IDcandi yg dibuat oleh jin dengan index [0], 
-# ini berfungsi untuk mentrack jumlah idcandi yg dibuat oelh tiap jin, mengingat bahwa satu jin dapat membuat lebih dari 1 Candi
-IDcanditotal = [i for i in range(1, 101)] # Ini array 1 dimensi, yg berfungsi untuk menyimpan daftrar data idcandi yg belum dibuat
-IDcandidibuat = [] # ini array 1 deimsi, yg menyimpan data mengenai IDcandi yg sudah taken/dibuat
-bahancanditiapjin = [] # Ini array 2 dimensi ex. [[120, 200, 300], [50, 20 , 200] ...] isinya integer dengan format [[pasir, air, batu]]
-totalbahan = [] # ini array 1 dimensi dengan formar [pasir, air, batu]
-useraktif = "" # ini berisi username dari pengguna yg aktif, if useraktif == Bandung : ...... elif useraktif == Roro : ....... else #jin : ......
-
-
+def lengthcandi(x):
+    i, sum=0,0
+    while i!=100:
+        if x[i][0]!=str('inf'): sum+=1
+        i+=1
+    return sum
 
 def length(x):
     i, sum=0,0
@@ -29,22 +19,60 @@ def mappend(arr, c):
     new_arr[length(arr)] = c
     return new_arr
 
+def my_split(string, delimiter=None):
+    result = []
+    current_word = ""
+    if delimiter is None:
+        delimiter = " "
+    for i in range(len(string)):
+        char = string[i]
+        if char == delimiter:
+            if current_word:
+                result = mappend(result, current_word)
+                current_word = ""
+        else:
+            current_word += char
+        if i == len(string) - 1:
+            result = mappend(result, current_word)
+    return result
+
+def del_element(arr, index):
+    new_arr = []
+    for i in range(len(arr)):
+        if i != index:
+            new_arr = mappend(new_arr, arr[i])
+    return new_arr
+
 def my_max(seq):
     if len(seq) == 0:
         raise ValueError("max() arg is an empty sequence")
     else:
-        max_val = seq[0]
+        max_val = int(seq[0])
         for val in range(len(seq)):
-            if seq[val] > max_val:
-                max_val = seq[val]
+            if int(seq[val]) > max_val:
+                max_val = int(seq[val])
         return max_val
 
 def my_min(seq):
     if len(seq) == 0:
         raise ValueError("min() arg is an empty sequence")
     else:
-        min_val = seq[0]
+        min_val = int(seq[0])
         for val in range(len(seq)):
-            if seq[val] < min_val:
-                min_val = seq[val]
+            if int(seq[val]) < min_val:
+                min_val = int(seq[val])
         return min_val
+    
+def my_sort(arr):
+    # Iterate over each element of the array
+    for i in range(len(arr)):
+        # Find the minimum element in the unsorted part of the array
+        min_idx = i
+        for j in range(i+1, len(arr)):
+            if arr[j] < arr[min_idx]:
+                min_idx = j
+        
+        # Swap the minimum element with the first element of the unsorted part
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+    
+    return arr
