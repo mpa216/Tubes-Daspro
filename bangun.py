@@ -15,6 +15,7 @@ arrBahan = [['pasir', 'blank', 'inf'], ['batu', 'blank', 'inf'], ['air', 'blank'
 # Contoh [["Si Cakep","Jin Pembangun","Saya cakep"], ..... , ["Bandung","Antagonist", "Bondowoso"] ,["Roro","Protagonist", "Jonggrang"]]
 userAktif = "" # ini berisi username dari pengguna yg aktif, if useraktif == Bandung : ...... elif useraktif == Roro : ....... else #jin : ......
 
+
 def bangun(userAktiflokal):
     global arrBahan
     global arrCandi 
@@ -36,16 +37,21 @@ def bangun(userAktiflokal):
         arrBahan[0][2] = str(pasirreal - pasir)
         arrBahan[1][2] = str(batureal - batu)
         arrBahan[2][2] = str(airreal - air) 
-        for i in range(100) :
-            if arrCandi[i][0] == "inf" :
-                arrCandi[i][0] = str(i)
-                arrCandi[i][1] = str(userAktiflokal)
-                arrCandi[i][2] = str(pasir)
-                arrCandi[i][3] = str(batu)
-                arrCandi[i][4] = str(air)
-                print("Candi berhasil dibangun.")
-                print(f"Sisa candi yang perlu dibangun: {100-lengthcandi(arrCandi)}.")
-                return
+        if lengthcandi(arrCandi) == 100 :
+            print("Candi berhasil dibangun.")
+            print(f"Sisa candi yang perlu dibangun: {100-lengthcandi(arrCandi)}.")
+            return
+        else :
+            for i in range(100) :
+                if arrCandi[i][0] == "inf" :
+                    arrCandi[i][0] = str(i)
+                    arrCandi[i][1] = str(userAktiflokal)
+                    arrCandi[i][2] = str(pasir)
+                    arrCandi[i][3] = str(batu)
+                    arrCandi[i][4] = str(air)
+                    print("Candi berhasil dibangun.")
+                    print(f"Sisa candi yang perlu dibangun: {100-lengthcandi(arrCandi)}.")
+                    return
     else :
         print("Bahan bangunan tidak mencukupi.")
         print("Candi tidak bisa dibangun!")
@@ -54,20 +60,21 @@ def bangun(userAktiflokal):
 
 # Untuk testing
 # userAktif = "dhika"
-# arrBahan[0][2] = 100
-# arrBahan[1][2] = 100
-# arrBahan[2][2] = 100
+# arrBahan[0][2] = 100000
+# arrBahan[1][2] = 100000
+# arrBahan[2][2] = 100000
 # arrCandi[1] = ['1', 'dhika', '2', '3', '4']
 # arrCandi[3] = ['3', 'dhika', '4', '3', '2']
 # gaming = True
-# count = 5
+# count = 104
 # while True :
 #     play = input("command?")   
-#     if play == "bangun" :           
-#         bangun(userAktif)
-#         for i in range(0, count+1) :
-#             print(arrCandi[i])
+#     if play == "bangun" :
+#         for i in range(104) :          
+#             bangun(userAktif)
+#         print(arrCandi[99])
 #         print(arrBahan)
+#         print(lengthcandi(arrCandi))
 #         count += 1
 
 #     else :
