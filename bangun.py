@@ -16,7 +16,7 @@ arrBahan = [['pasir', 'blank', 'inf'], ['batu', 'blank', 'inf'], ['air', 'blank'
 userAktif = "" # ini berisi username dari pengguna yg aktif, if useraktif == Bandung : ...... elif useraktif == Roro : ....... else #jin : ......
 
 
-def bangun(userAktiflokal):
+def bangun():
     global arrBahan
     global arrCandi 
 
@@ -45,7 +45,7 @@ def bangun(userAktiflokal):
             for i in range(100) :
                 if arrCandi[i][0] == "inf" :
                     arrCandi[i][0] = str(i)
-                    arrCandi[i][1] = str(userAktiflokal)
+                    arrCandi[i][1] = str(userAktif)
                     arrCandi[i][2] = str(pasir)
                     arrCandi[i][3] = str(batu)
                     arrCandi[i][4] = str(air)
