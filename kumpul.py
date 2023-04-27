@@ -52,3 +52,4 @@ def kumpul():
 #         print(arrBahan)
 #     else :
 #         gaming = False
+#
