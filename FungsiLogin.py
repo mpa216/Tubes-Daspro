@@ -1,7 +1,7 @@
 def login(arruser,useraktif):
         username_login, password_login = str(input("Username: ")), str(input("Password: "))
         while useraktif=="":
-            for i in range (1,3):
+            for i in range (0,2):
                 if arruser[i][0]==username_login:
                     if arruser[i][1]==password_login:
                         print(f'Selamat datang, {username_login}!\nMasukkan command “help” untuk daftar command yang dapat kamu panggil.')
