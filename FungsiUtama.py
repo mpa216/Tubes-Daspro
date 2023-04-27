@@ -9,7 +9,7 @@ def length(x):
 
 def lengthcandi(x):
     i, sum=0,0
-    while i!=99:
+    while i!=100:
         if x[i][0]!=str('inf'): sum+=1
         i+=1
     return sum
