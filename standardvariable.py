@@ -1,6 +1,6 @@
                                                           # VERSI        ROMBAK #
 arrUser     = [[str("inf") for cols in range (3)] for rows in range(102)] # array 2 dimensi (102 x 3) dengan index 0-99 milik para jin, 100 dimiilki Bandung, 101 dimiliki Roro
-# arrUser[x][0], arrUser[x][1], arrUser[x][2] = Username,Role, Password
+# arrUser[x][0], arrUser[x][1], arrUser[x][2] = Username, Password, Role
 # Contoh [["Si Cakep","Jin Pembangun","Saya cakep"], ..... , ["Bandung","Antagonist", "Bondowoso"] ,["Roro","Protagonist", "Jonggrang"]]
 userAktif = "" # ini berisi username dari pengguna yg aktif, if useraktif == Bandung : ...... elif useraktif == Roro : ....... else #jin : ......
 jenisJin = [] # 0: pengumpul 1: pembangun, array ini isinya integer
