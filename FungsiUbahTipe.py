@@ -1,4 +1,5 @@
-def UbahTipeJin(arrUser):
+def UbahTipeJin():
+    global arrUser
     ada = False
     jinygdiubah = str(input("Masukkan username jin :"))
     for i in range (2,103):
