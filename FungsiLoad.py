@@ -23,7 +23,10 @@ def load_data(nama_folder):
         for row in open(path):
             rowcount+= 1
         data_user = csv.reader(file, delimiter=";")
-        arrUser = [next(data_user) for i in range (rowcount)]
+        arrUser_sementara = [next(data_user) for i in range (rowcount)]
+        arrUser = ['*' for i in range(rowcount-1)]
+        for i in range (1,rowcount):
+            arrUser[i-1]=arrUser_sementara[i]
         print(arrUser)
         
     with open(path_file_candi, 'r') as file:
@@ -32,7 +35,10 @@ def load_data(nama_folder):
         for row in open(path):
             rowcount+= 1
         data_candi = csv.reader(file, delimiter=";")
-        arrCandi = [next(data_candi) for i in range (rowcount)]
+        arrCandi_sementara = [next(data_candi) for i in range (rowcount)]
+        arrCandi = ['*' for i in range(rowcount-1)]
+        for i in range (1,rowcount):
+            arrUser[i-1]=arrCandi_sementara[i]
         print(arrCandi)
 
 
@@ -42,7 +48,10 @@ def load_data(nama_folder):
         for row in open(path):
             rowcount+= 1
         data_bahan = csv.reader(file, delimiter=";")
-        arrBahan = [next(data_bahan) for i in range (rowcount)]
+        arrBahan_sementara = [next(data_bahan) for i in range (rowcount)]
+        arrBahan = ['*' for i in range(rowcount-1)]
+        for i in range (1,rowcount):
+            arrBahan[i-1]=arrUser_sementara[i]
         print(arrBahan)
 
     return
