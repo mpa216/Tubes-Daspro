@@ -18,7 +18,7 @@ def load_data(nama_folder):
     path_file_bahan = os.path.join(nama_folder, nama_file[1])
     path_file_candi = os.path.join(nama_folder, nama_file[2])
     with open(path_file_user, 'r') as file:
-        path = 'D:\\kodingan william\\TUBES DASPRO\\contoh\\user.csv'
+        path = 'contoh\\user.csv'
         rowcount = 0
         for row in open(path):
             rowcount+= 1
@@ -30,7 +30,7 @@ def load_data(nama_folder):
         print(arrUser)
         
     with open(path_file_candi, 'r') as file:
-        path = 'D:\\kodingan william\\TUBES DASPRO\\contoh\\candi.csv'
+        path = 'contoh\\candi.csv'
         rowcount = 0
         for row in open(path):
             rowcount+= 1
@@ -43,7 +43,7 @@ def load_data(nama_folder):
 
 
     with open(path_file_bahan, 'r') as file:
-        path = 'D:\\kodingan william\\TUBES DASPRO\\contoh\\bahan_bangunan.csv'
+        path = 'contoh\\bahan_bangunan.csv'
         rowcount = 0
         for row in open(path):
             rowcount+= 1
