@@ -1,6 +1,9 @@
 import os
 import argparse
 import csv
+arrUser = []
+arrBahan=[]
+arrCandi=[]
 def load_data(nama_folder):
     global arrUser
     global arrCandi
@@ -15,17 +18,34 @@ def load_data(nama_folder):
     path_file_bahan = os.path.join(nama_folder, nama_file[1])
     path_file_candi = os.path.join(nama_folder, nama_file[2])
     with open(path_file_user, 'r') as file:
+        path = 'D:\\kodingan william\\TUBES DASPRO\\contoh\\user.csv'
+        rowcount = 0
+        for row in open(path):
+            rowcount+= 1
         data_user = csv.reader(file, delimiter=";")
-        arrUser = [next(data_user) for i in range(1,103)]
+        arrUser = [next(data_user) for i in range (rowcount)]
+        print(arrUser)
         
     with open(path_file_candi, 'r') as file:
-        data_candi = file.read()
-        arrCandi = [next(data_candi) for i in range(1,102)]
+        path = 'D:\\kodingan william\\TUBES DASPRO\\contoh\\candi.csv'
+        rowcount = 0
+        for row in open(path):
+            rowcount+= 1
+        data_candi = csv.reader(file, delimiter=";")
+        arrCandi = [next(data_candi) for i in range (rowcount)]
+        print(arrCandi)
 
 
     with open(path_file_bahan, 'r') as file:
-        data_bahan = file.read()
-        arrBahan = [next(data_bahan) for i in range(1,4)]
+        path = 'D:\\kodingan william\\TUBES DASPRO\\contoh\\bahan_bangunan.csv'
+        rowcount = 0
+        for row in open(path):
+            rowcount+= 1
+        data_bahan = csv.reader(file, delimiter=";")
+        arrBahan = [next(data_bahan) for i in range (rowcount)]
+        print(arrBahan)
+
+    return
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Prosedur untuk memuat data dari file-file dalam suatu folder.")
