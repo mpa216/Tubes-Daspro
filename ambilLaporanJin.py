@@ -3,8 +3,8 @@ import standardvariables
 
 def hitungJin(arrUser):
     global totalJin
-    arrUser = standardvariables.arrUser
     totalJin = 0
+    arrUser = standardvariables.arrUser
     for i in range(102):
         if ((arrUser[i][2] == "Jin Pembangun")  or (arrUser[i][2] == "Jin Pengumpul")):
             totalJin += 1
@@ -12,8 +12,8 @@ def hitungJin(arrUser):
 
 def hitungJinPengumpul(arrUser):
     global totalJinPengumpul
-    arrUser = standardvariables.arrUser
     totalJinPengumpul = 0
+    arrUser = standardvariables.arrUser
     for i in range(102):
         if (arrUser[i][2] == 'Jin Pengumpul'):
             totalJinPengumpul += 1
@@ -21,8 +21,8 @@ def hitungJinPengumpul(arrUser):
 
 def hitungJinPembangun(arrUser):
     global totalJinPembangun
-    arrUser = standardvariables.arrUser
     totalJinPembangun = 0
+    arrUser = standardvariables.arrUser
     for i in range(102):
         if (arrUser[i][2] == "Jin Pembangun"):
             totalJinPembangun += 1
