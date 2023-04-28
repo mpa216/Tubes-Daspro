@@ -24,45 +24,45 @@ arrBahan = [['pasir', 'blank', 'inf'], ['batu', 'blank', 'inf'], ['air', 'blank'
                     # arrBahan[2][0], arrBahan[2][1],arrBahan[2][2] = "Air", "Blank", jumlah
 # Contoh [["Pasir","Blank", 40], ["Batu","Blank","30"],["Air","Blank","50"]]
 
-totalCandi = FungsiUtama.lengthcandi(standardvariables.arrCandi)
+totalCandi = FungsiUtama.lengthcandi(arrCandi)
 
-def hitungPasir(arrCandi):
-    global usedPasir 
+def hitungPasir():
+    global usedPasir
+    global arrCandi 
     usedPasir = 0
-    arrCandi = standardvariables.arrCandi
     for i in range(100):
         if arrCandi[i][2] != str("inf"):
             usedPasir += int(arrCandi[i][2])
         
 
-def hitungBatu(arrCandi):
+def hitungBatu():
     global usedBatu 
+    global arrCandi
     usedBatu = 0
-    arrCandi = standardvariables.arrCandi
     for i in range(100):
         if arrCandi[i][3] != str("inf"):
             usedBatu += int(arrCandi[i][3])
    
-def hitungAir(arrCandi):
+def hitungAir():
     global usedAir 
+    global arrCandi
     usedAir = 0
-    arrCandi = standardvariables.arrCandi
     for i in range(100):
         if arrCandi[i][4] != str("inf"):
             usedAir += int(arrCandi[i][4])
 
-hitungPasir(standardvariables.arrCandi)
-hitungBatu(standardvariables.arrCandi)
-hitungAir(standardvariables.arrCandi)
+hitungPasir()
+hitungBatu()
+hitungAir()
 
-def hargaCandi(arrCandi):
+def hargaCandi():
+    global arrCandi
     global candiAda
     global tajMahal
     global biayaTajMahal
     global tajMurah
     global biayaTajMurah
     candiAda = [[0 for cols in range(2)] for rows in range(101)]
-    arrCandi = standardvariables.arrCandi
     for i in range(totalCandi):
         if (arrCandi[i][0] != str("inf")):
             candiAda[i][0] = arrCandi[i][0]
@@ -82,7 +82,7 @@ def hargaCandi(arrCandi):
                 biayaTajMurah = candiAda[i][1]           
 
             
-hargaCandi(standardvariables.arrCandi)
+hargaCandi()
 
 def laporanCandi():
     print(f"Total Candi: {totalCandi}")
