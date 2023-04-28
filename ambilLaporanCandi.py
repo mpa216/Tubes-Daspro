@@ -10,7 +10,6 @@ def hitungPasir(arrCandi):
     for i in range(100):
         if arrCandi[i][2] != str("inf"):
             usedPasir += int(arrCandi[i][2])
-    return usedPasir
         
 
 def hitungBatu(arrCandi):
@@ -20,7 +19,6 @@ def hitungBatu(arrCandi):
     for i in range(100):
         if arrCandi[i][3] != str("inf"):
             usedBatu += int(arrCandi[i][3])
-    return usedBatu
    
 def hitungAir(arrCandi):
     global usedAir 
@@ -29,7 +27,6 @@ def hitungAir(arrCandi):
     for i in range(100):
         if arrCandi[i][4] != str("inf"):
             usedAir += int(arrCandi[i][4])
-    return usedAir
 
 hitungPasir(standardvariables.arrCandi)
 hitungBatu(standardvariables.arrCandi)
@@ -73,3 +70,4 @@ def laporanCandi():
     print(f"ID Candi Termurah: {tajMurah} (Rp {biayaTajMurah})")
 
 # laporanCandi()
+
