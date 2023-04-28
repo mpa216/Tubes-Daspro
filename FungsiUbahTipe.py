@@ -1,4 +1,4 @@
-def UbahTipeJin():
+def UbahTipe():
     global arrUser
     ada = False
     jinygdiubah = str(input("Masukkan username jin :"))
