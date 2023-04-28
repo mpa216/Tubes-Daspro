@@ -28,8 +28,8 @@ arrBahan = [['pasir', 'blank', 'inf'], ['batu', 'blank', 'inf'], ['air', 'blank'
 #                     #--> kalo mo test case
 # arrCandi[1][0] = "2"    
 
-# userAktif = "Roro"# --> kalo mo test case
-def HancurkanCandi(arrCandi):
+userAktif = "Roro"# --> kalo mo test case
+def HancurkanCandi():
     if (userAktif == "Roro"): 
         id = input("Masukkan ID candi: ")
         for i in range(100):
@@ -51,6 +51,6 @@ def HancurkanCandi(arrCandi):
         print("Anda tidak memiliki akses untuk fungsi tersebut!") 
 
 
-# HancurkanCandi(arrCandi)
-                    # Kalo mo test case
+# HancurkanCandi()
+#                     # Kalo mo test case
 # print(arrCandi)
