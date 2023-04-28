@@ -1,41 +1,34 @@
-def jenis_jin(username_jintotal, username_jinpembangun, password_jinpembangun, username_jinpengumpul, password_jinpengumpul):
-    from ProgramUtama import length, mappend
+from ProgramUtama import append_lain
+def jenis_jin(arrUser):
     x = int(input("Masukkan nomor jenis jin yang ingin dipanggil: "))
     tambah = False
     while not (x==1 or x==2):
         print(f'Tidak ada jenis jin bernomor "{x}"')
         x = int(input("Masukkan nomor jenis jin yang ingin dipanggil: "))
+    username_jin = str(input("Masukkan username jin: "))
+    password_jin = str(input("Masukkan password jin: "))
     if x==1:
         print("Memilih jin “Pengumpul”.")
-        uname_pengumpul = str(input("Masukkan username jin: "))
-        j=0
-        while j<103:
-            if username_jintotal[j]==uname_pengumpul:
-                print(f'Username "{uname_pengumpul}" sudah diambil!')
-                uname_pengumpul = str(input("Masukkan username jin: "))
+        for i in range (2,103):
+            if arrUser[i][0]==username_jin:
+                print(f'Username "{username_jin}" sudah diambil!')
+                username_jin = str(input("Masukkan username jin: "))
                 tambah = False
-                j=0
+                break
             else:
                 tambah = True
-            j+=1
-        pass_pengumpul = str(input("Masukkan password jin: "))
         if tambah:
-                return mappend(username_jinpengumpul, uname_pengumpul), mappend(username_jintotal, uname_pengumpul), mappend(password_jinpengumpul, pass_pengumpul)
+            arrUser = append_lain(arrUser,[username_jin,password_jin,'Pengumpul'])
     elif x==2:
         print("Memilih jin Pembangun.")
-        uname_pembangun = str(input("Masukkan username jin: "))
-        j=0
-        while j<103:
-            if username_jintotal[j]==uname_pembangun:
-                print(f'Username "{uname_pembangun}" sudah diambil!')
-                uname_pembangun = str(input("Masukkan username jin: "))
+        for i in range (2,103):
+            if arrUser[i][0]==username_jin:
+                print(f'Username "{username_jin}" sudah diambil!')
+                username_jin = str(input("Masukkan username jin: "))
                 tambah = False
-                j=0
+                break
             else:
                 tambah = True
-                j+=1
-        pass_pembangun = str(input("Masukkan password jin: "))
         if tambah:
-                return mappend(username_jinpembangun, uname_pembangun), mappend(username_jintotal, uname_pembangun), mappend(password_jinpembangun, pass_pembangun)
-    else:
-        return False
+            arrUser = append_lain(arrUser,[username_jin,password_jin,'Pembangun'])
+    return
