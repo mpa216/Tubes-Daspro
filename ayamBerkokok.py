@@ -27,14 +27,13 @@ arrBahan = [['pasir', 'blank', 'inf'], ['batu', 'blank', 'inf'], ['air', 'blank'
 from FungsiUtama import lengthcandi
 
 # arrCandi[0][0] = 1 
-                    # --> kalo mo test case
+#                     #--> kalo mo test case
 # arrCandi[1][0] = 2    
 
-# userAktif = "Roro" --> kalo mo test case
+# userAktif = "Roro" #--> kalo mo test case
 
 jumlahCandi = lengthcandi(arrCandi)
-def ayam_berkokok (arrCandi):
-    # global arrCandi
+def ayam_berkokok ():
     if (userAktif == "Roro"):
         if (jumlahCandi) < (100):
             print("Kukuruyuk.. Kukuruyuk.. \n")
@@ -51,6 +50,6 @@ def ayam_berkokok (arrCandi):
     else:
         print("Anda tidak memiliki akses untuk fungsi tersebut!") 
 
-# ayam_berkokok(arrCandi) # --> jika mau test cse
+# ayam_berkokok() # --> jika mau test cse
 
 
