@@ -1,5 +1,9 @@
 import argparse
 import os
+def tulis_header(header,path):
+    with open(path,'w') as file:
+        return file.write(f'{header};\n')
+    
 def save_data(nama_folder):
     global arrUser
     global arrCandi
@@ -9,12 +13,10 @@ def save_data(nama_folder):
         print(f"Folder '{nama_folder}' tidak ditemukan.")
     #Load data dari file-file dalam folder
     else:
-        with open(f"{nama_folder}\\user.csv", "w") as file:
+        with open(f"{nama_folder}\\user.csv", "a") as file:
             skip = True
-            header = ["username","password","role"]
-            for col in range (3):
-                file.write(str(header[col]) + ";")
-            file.write("\n")
+            header = "username;password;role"
+            tulis_header(header,f"{nama_folder}\\user.csv")
             for row in range (103):
                 for col in range (3):
                     if arrUser[row][col]!='inf':
@@ -24,12 +26,10 @@ def save_data(nama_folder):
                     file.write("\n")
                 skip=True
             
-        with open(f"{nama_folder}\\candi.csv", "w") as file:
+        with open(f"{nama_folder}\\candi.csv", "a") as file:
             skip = True
-            header = ["id","pembuat","pasir","batu","air"]
-            for col in range (5):
-                file.write(str(header[col]) + ";")
-            file.write("\n")
+            header = "id;pembuat;pasir;batu;air"
+            tulis_header(header,f"{nama_folder}\\candi.csv")
             for row in range (100):
                 for col in range (5):
                     if arrCandi[row][col]!='inf':
@@ -39,12 +39,10 @@ def save_data(nama_folder):
                     file.write("\n")
                 skip=True
     
-        with open(f"{nama_folder}\\bahan_bangunan.csv", "w") as file:
+        with open(f"{nama_folder}\\bahan_bangunan.csv", "a") as file:
             skip = True
-            header = ["nama","deskripsi","jumlah"]
-            for col in range (3):
-                file.write(str(header[col]) + ";")
-            file.write("\n")
+            header = "nama;deskripsi;jumlah"
+            tulis_header(header,f"{nama_folder}\\bahan_bangunan.csv")
             for row in range (3):
                 for col in range (3):
                     if arrBahan[row][col]!='inf':
