@@ -1,8 +1,7 @@
 import os
 import argparse
-import csv
 
-def mappend(arr, c):
+def mappend_lain_2(arr, c):
     new_arr = [None] * (len_lain(arr) + 2)
     for i in range(len_lain(arr)):
         new_arr[i] = arr[i]
@@ -39,15 +38,14 @@ def read_csv_file(file_path, delimiter=';'):
                 elif line[i] == '"' and inside_quotes:
                     inside_quotes = False
                 elif line[i] == delimiter and not inside_quotes:
-                    row = mappend(row, cell_value)
+                    row = mappend_lain_2(row, cell_value)
                     cell_value = ''
                 else:
                     cell_value += line[i]
-            row = mappend(row, cell_value)
-            rows = mappend(rows, row)
+            row = mappend_lain_2(row, cell_value)
+            rows = mappend_lain_2(rows, row)
             line = file.readline()
     return rows
-
 
 def load_data(nama_folder):
     global arrUser
