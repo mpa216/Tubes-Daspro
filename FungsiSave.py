@@ -51,7 +51,7 @@ def save(nama_folder):
     return
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description="Prosedur untuk memuat data dari file-file dalam suatu folder.")
+    parser = argparse.ArgumentParser(description="Prosedur untuk menyimpan data ke file-file dalam suatu folder.")
     parser.add_argument('nama_folder', type=str, help="Nama folder yang berisi file-file penyimpanan.")
     args = parser.parse_args()
     save(args.nama_folder)
