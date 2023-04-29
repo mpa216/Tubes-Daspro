@@ -48,11 +48,6 @@ def read_csv_file(file_path, delimiter=';'):
             line = file.readline()
     return rows
 
-
-
-arrUser = [['inf'for j in range (3)] for i in range (10)]
-arrBahan=[['inf' for j in range (3)] for i in range (10)]
-arrCandi=[['inf'for j in range (5)] for i in range (10)]
 def load_data(nama_folder):
     global arrUser
     global arrCandi
