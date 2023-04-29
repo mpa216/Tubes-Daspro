@@ -47,6 +47,7 @@ def load_data(nama_folder):
     #Cek apakah folder ada
     if not os.path.exists(nama_folder):
         print(f"Folder '{nama_folder}' tidak ditemukan.")
+        return
 
     #Load data dari file-file dalam folder
     else:
@@ -70,7 +71,7 @@ def load_data(nama_folder):
                 for j in range (3):
                     arrBahan[i-1][j]=data_bahan[i][j]
             print(arrBahan)
-        return
+            return
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Prosedur untuk memuat data dari file-file dalam suatu folder.")
