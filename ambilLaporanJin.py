@@ -25,26 +25,26 @@ arrBahan = [['pasir', 'blank', 'inf'], ['batu', 'blank', 'inf'], ['air', 'blank'
 # Contoh [["Pasir","Blank", 40], ["Batu","Blank","30"],["Air","Blank","50"]]
 
 
-# arrUser[0][2] = "Jin Pembangun"
-# arrUser[1][2] = "Jin Pembangun"  ----> kalo mo test case
-# arrUser[2][2] = "Jin Pengumpul"
+# arrUser[0][2] = "Pembangun"
+# arrUser[1][2] = "Pembangun"  # ----> kalo mo test case
+# arrUser[2][2] = "Pengumpul"
 
 # arrCandi[0][0],arrCandi[0][1] = "1","Si Caka"
 # arrCandi[1][0],arrCandi[1][1] = "2","Si Cakep"
-# arrCandi[2][0],arrCandi[2][1] = "3","Si Cakep" ----> kalo mo test case
+# arrCandi[2][0],arrCandi[2][1] = "3","Si Cakep" # ----> kalo mo test case
 # arrCandi[3][0],arrCandi[3][1] = "4","Si Assna"
 # arrCandi[4][0],arrCandi[4][1] = "5","Si Assna"
 # arrCandi[5][0],arrCandi[5][1] = "6","Si Test"
 
 # arrBahan[0][2] = "5"
-# arrBahan[1][2] = "6" --> kalo mo test case
+# arrBahan[1][2] = "6" # --> kalo mo test case
 # arrBahan[2][2] = "7"
 
 def hitungJin(arrUser):
     global totalJin
     totalJin = 0
     for i in range(102):
-        if ((arrUser[i][2] == "Jin Pembangun")  or (arrUser[i][2] == "Jin Pengumpul")):
+        if ((arrUser[i][2] == "Pembangun")  or (arrUser[i][2] == "Pengumpul")):
             totalJin += 1
     
 
@@ -52,7 +52,7 @@ def hitungJinPengumpul(arrUser):
     global totalJinPengumpul
     totalJinPengumpul = 0
     for i in range(102):
-        if (arrUser[i][2] == 'Jin Pengumpul'):
+        if (arrUser[i][2] == 'Pengumpul'):
             totalJinPengumpul += 1
 
 
@@ -60,7 +60,7 @@ def hitungJinPembangun(arrUser):
     global totalJinPembangun
     totalJinPembangun = 0
     for i in range(102):
-        if (arrUser[i][2] == "Jin Pembangun"):
+        if (arrUser[i][2] == "Pembangun"):
             totalJinPembangun += 1
     
     
@@ -163,5 +163,5 @@ def laporanJin():
     print(f"Jumlah Air: {air}")
     print(f"Jumlah Batu: {batu} ")
 
-# laporanJin() --> kalo mo test case
+# laporanJin() # --> kalo mo test case
 
