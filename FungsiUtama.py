@@ -80,3 +80,9 @@ def my_sort(arr):
         arr[i], arr[min_idx] = arr[min_idx], arr[i]
     
     return arr
+
+def append_lain(arr,c):
+    for i in range (2,103):
+        if arr[i]==['inf','inf','inf']:
+            arr[i]==c
+    return arr
