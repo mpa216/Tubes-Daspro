@@ -4,7 +4,7 @@ def tulis_header(header,path):
     with open(path,'w') as file:
         return file.write(f'{header};\n')
     
-def save_data(nama_folder):
+ddef Save(nama_folder):
     global arrUser
     global arrCandi
     global arrBahan
@@ -15,8 +15,7 @@ def save_data(nama_folder):
     else:
         with open(f"{nama_folder}\\user.csv", "a") as file:
             skip = True
-            header = "username;password;role"
-            tulis_header(header,f"{nama_folder}\\user.csv")
+            tulis_header("username;password;role",f"{nama_folder}\\user.csv")
             for row in range (103):
                 for col in range (3):
                     if arrUser[row][col]!='inf':
@@ -28,8 +27,7 @@ def save_data(nama_folder):
             
         with open(f"{nama_folder}\\candi.csv", "a") as file:
             skip = True
-            header = "id;pembuat;pasir;batu;air"
-            tulis_header(header,f"{nama_folder}\\candi.csv")
+            tulis_header("id;pembuat;pasir;batu;air",f"{nama_folder}\\candi.csv")
             for row in range (100):
                 for col in range (5):
                     if arrCandi[row][col]!='inf':
@@ -41,8 +39,7 @@ def save_data(nama_folder):
     
         with open(f"{nama_folder}\\bahan_bangunan.csv", "a") as file:
             skip = True
-            header = "nama;deskripsi;jumlah"
-            tulis_header(header,f"{nama_folder}\\bahan_bangunan.csv")
+            tulis_header("nama;deskripsi;jumlah",f"{nama_folder}\\bahan_bangunan.csv")
             for row in range (3):
                 for col in range (3):
                     if arrBahan[row][col]!='inf':
@@ -57,4 +54,4 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Prosedur untuk memuat data dari file-file dalam suatu folder.")
     parser.add_argument('nama_folder', type=str, help="Nama folder yang berisi file-file penyimpanan.")
     args = parser.parse_args()
-    save_data(args.nama_folder)
+    Save(args.nama_folder)
