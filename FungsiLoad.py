@@ -1,7 +1,7 @@
 import os
 import argparse
 
-def mappend(arr, c):
+def mappend_lain(arr, c):
     new_arr = [None] * (len_lain(arr) + 2)
     for i in range(len_lain(arr)):
         new_arr[i] = arr[i]
@@ -59,9 +59,9 @@ def load_data(nama_folder):
     else:
         with open(f'{nama_folder}\\user.csv', 'r') as file:
             data_user = read_csv_file(file.name, delimiter=";")
-            for i in range (len_lain(data_user)):
+            for i in range (1,len_lain(data_user)):
                 for j in range (3):
-                    arrUser[i][j]=data_user[i][j]
+                    arrUser[i-1][j-1]=data_user[i][j]
             print(arrUser)
             
         with open(f'{nama_folder}\\candi.csv', 'r') as file:
