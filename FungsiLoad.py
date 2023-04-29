@@ -40,7 +40,7 @@ def baca_csv(file_path, delimiter=';'):
             line = file.readline()
     return rows
 
-def load_data(nama_folder):
+def load(nama_folder):
     global arrUser
     global arrCandi
     global arrBahan
@@ -77,4 +77,4 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Prosedur untuk memuat data dari file-file dalam suatu folder.")
     parser.add_argument('nama_folder', type=str, help="Nama folder yang berisi file-file penyimpanan.")
     args = parser.parse_args()
-    load_data(args.nama_folder)
+    load(args.nama_folder)
