@@ -1,4 +1,4 @@
-userAktif = ""
+roleAktif = ""
 
 def Help():
     notLogin = """1. login - untuk menggunakan akun
@@ -25,16 +25,16 @@ def Help():
         print("===========HELP===========")
         print(notLogin)
     else:
-        if userAktif == "bandung_bondowoso":
+        if roleAktif == "bandung_bondowoso":
             print("===========HELP===========")
             print(bandung)
-        elif userAktif == "roro_jonggrang":
+        elif roleAktif == "roro_jonggrang":
             print("===========HELP===========")
             print(roro)
-        elif userAktif == "jin_pengumpul":
+        elif roleAktif == "jin_pengumpul":
             print("===========HELP===========")
             print(jinPengumpul)
-        elif userAktif == "jin_pembangun":
+        elif roleAktif == "jin_pembangun":
             print("===========HELP===========")
             print(jinPembangun)
         
