@@ -24,13 +24,13 @@ def read_csv_file(file_path, delimiter=';'):
         while line:
             row = ['inf']
             cell_value = ''
-            inside_quotes = False
+            dalampetik = False
             for i in range (len(line)):
-                if line[i] == '"' and not inside_quotes:
-                    inside_quotes = True
-                elif line[i] == '"' and inside_quotes:
-                    inside_quotes = False
-                elif line[i] == delimiter and not inside_quotes:
+                if line[i] == '"' and not dalampetik:
+                    dalampetik = True
+                elif line[i] == '"' and dalampetik:
+                    dalampetik = False
+                elif line[i] == delimiter and not dalampetik:
                     row = mappend_lain_2(row, cell_value)
                     cell_value = ''
                 else:
