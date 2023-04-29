@@ -4,7 +4,7 @@ def tulis_header(header,path):
     with open(path,'w') as f:
         return f.write(f'{header};\n')
     
-def save_data(nama_folder):
+def save(nama_folder):
     global arrUser
     global arrCandi
     global arrBahan
@@ -54,4 +54,4 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Prosedur untuk memuat data dari file-file dalam suatu folder.")
     parser.add_argument('nama_folder', type=str, help="Nama folder yang berisi file-file penyimpanan.")
     args = parser.parse_args()
-    save_data(args.nama_folder)
+    save(args.nama_folder)
