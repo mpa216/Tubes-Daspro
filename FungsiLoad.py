@@ -67,21 +67,21 @@ def load_data(nama_folder):
             data_user = read_csv_file(file.name, delimiter=";")
             for i in range (1,len_lain(data_user)):
                 for j in range (3):
-                    arrUser[i-1][1]=data_user[i][j]
+                    arrUser[i-1][j]=data_user[i][j]
             print(arrUser)
             
         with open(f'{nama_folder}\\candi.csv', 'r') as file:
             data_candi = read_csv_file(file.name, delimiter=";")
             for i in range (1,len_lain(data_candi)):
                 for j in range (5):
-                    arrCandi[i-1][1]=data_candi[i][j]
+                    arrCandi[i-1][j]=data_candi[i][j]
             print(arrCandi)
 
         with open(f'{nama_folder}\\bahan_bangunan.csv', 'r') as file:
             data_bahan = read_csv_file(file.name, delimiter=";")
             for i in range (1,len_lain(data_bahan)):
                 for j in range (3):
-                    arrBahan[i-1][1]=data_bahan[i][j]
+                    arrBahan[i-1][j]=data_bahan[i][j]
             print(arrBahan)
         return
 
