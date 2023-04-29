@@ -33,20 +33,21 @@ def read_csv_file(file_path, delimiter=';'):
             row = ['inf']
             cell_value = ''
             inside_quotes = False
-            for char in line:
-                if char == '"' and not inside_quotes:
+            for i in range (len(line)):
+                if line[i] == '"' and not inside_quotes:
                     inside_quotes = True
-                elif char == '"' and inside_quotes:
+                elif line[i] == '"' and inside_quotes:
                     inside_quotes = False
-                elif char == delimiter and not inside_quotes:
+                elif line[i] == delimiter and not inside_quotes:
                     row = mappend(row, cell_value)
                     cell_value = ''
                 else:
-                    cell_value += char
+                    cell_value += line[i]
             row = mappend(row, cell_value)
             rows = mappend(rows, row)
             line = file.readline()
     return rows
+
 
 def load_data(nama_folder):
     global arrUser
