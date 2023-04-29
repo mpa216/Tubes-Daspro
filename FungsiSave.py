@@ -7,7 +7,6 @@ def save_data(nama_folder):
     #Cek apakah folder ada
     if not os.path.exists(nama_folder):
         print(f"Folder '{nama_folder}' tidak ditemukan.")
-    #Load data dari file-file dalam folder
     else:
         with open(f"{nama_folder}\\user.csv", "w") as file:
             for row in arrUser:
