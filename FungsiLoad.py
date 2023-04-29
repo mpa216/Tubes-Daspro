@@ -16,13 +16,6 @@ def len_lain(arr):
         sum+=1
         i+=1
     return sum
-def len_matriks(arr):
-    i=0
-    sum=0
-    while arr[i][0]!='inf':
-        sum+=1
-        i+=1
-    return
 
 def read_csv_file(file_path, delimiter=';'):
     rows = ['inf']
