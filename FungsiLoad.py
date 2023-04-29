@@ -1,7 +1,8 @@
 import os
 import argparse
+import csv
 
-def mappend_lain(arr, c):
+def mappend(arr, c):
     new_arr = [None] * (len_lain(arr) + 2)
     for i in range(len_lain(arr)):
         new_arr[i] = arr[i]
@@ -47,6 +48,11 @@ def read_csv_file(file_path, delimiter=';'):
             line = file.readline()
     return rows
 
+
+
+arrUser = [['inf'for j in range (3)] for i in range (10)]
+arrBahan=[['inf' for j in range (3)] for i in range (10)]
+arrCandi=[['inf'for j in range (5)] for i in range (10)]
 def load_data(nama_folder):
     global arrUser
     global arrCandi
@@ -61,19 +67,22 @@ def load_data(nama_folder):
             data_user = read_csv_file(file.name, delimiter=";")
             for i in range (1,len_lain(data_user)):
                 for j in range (3):
-                    arrUser[i-1][j-1]=data_user[i][j]
+                    arrUser[i-1][1]=data_user[i][j]
+            print(arrUser)
             
         with open(f'{nama_folder}\\candi.csv', 'r') as file:
             data_candi = read_csv_file(file.name, delimiter=";")
             for i in range (1,len_lain(data_candi)):
                 for j in range (5):
-                    arrCandi[i-1][j-1]=data_candi[i][j]
+                    arrCandi[i-1][1]=data_candi[i][j]
+            print(arrCandi)
 
         with open(f'{nama_folder}\\bahan_bangunan.csv', 'r') as file:
             data_bahan = read_csv_file(file.name, delimiter=";")
             for i in range (1,len_lain(data_bahan)):
                 for j in range (3):
-                    arrBahan[i-1][j-1]=data_bahan[i][j]
+                    arrBahan[i-1][1]=data_bahan[i][j]
+            print(arrBahan)
         return
 
 if __name__ == '__main__':
