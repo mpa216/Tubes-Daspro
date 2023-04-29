@@ -21,7 +21,7 @@ def Help():
     jinPembangun = """1. logout - untuk keluar dari akun yang digunakan sekarang
     2. bangun - untuk membangun candi
     3. exit - untuk keluar dari program dan kembali ke terminal"""  
-    if userAktif == "":
+    if roleAktif == "":
         print("===========HELP===========")
         print(notLogin)
     else:
