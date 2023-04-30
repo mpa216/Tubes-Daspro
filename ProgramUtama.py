@@ -440,46 +440,54 @@ def laporanjin():
 
 def laporancandi():
     totalCandi = lengthcandi(arrCandi)
-
-    def hitungPasir(arrCandi):
-        global usedPasir
+    def hitungPasir():
+        global usedPasir 
         usedPasir = 0
         for i in range(100):
             if arrCandi[i][2] != str("inf"):
                 usedPasir += int(arrCandi[i][2])
             
 
-    def hitungBatu(arrCandi):
+    def hitungBatu():
         global usedBatu 
         usedBatu = 0
         for i in range(100):
             if arrCandi[i][3] != str("inf"):
                 usedBatu += int(arrCandi[i][3])
     
-    def hitungAir(arrCandi):
+    def hitungAir():
         global usedAir 
         usedAir = 0
         for i in range(100):
             if arrCandi[i][4] != str("inf"):
                 usedAir += int(arrCandi[i][4])
 
-    hitungPasir(arrCandi)
-    hitungBatu(arrCandi)
-    hitungAir(arrCandi)
+    hitungPasir()
+    hitungBatu()
+    hitungAir()
 
-    def hargaCandi(arrCandi):
+    def hargaCandi():
         global candiAda
         global tajMahal
         global biayaTajMahal
         global tajMurah
         global biayaTajMurah
+        global arrCandiHitung
+        arrCandiHitung = [[str("0") for cols in range(5)] for rows in range(100)]
+        for i in range(100):
+            if (arrCandiHitung[i] != arrCandi[i]):
+                arrCandiHitung[i] = arrCandi[i]
+        for i in range(100):
+            if (arrCandiHitung[i][0] == str("inf")):
+                arrCandiHitung[i] = ["0","0","0","0","0"]
         candiAda = [[0 for cols in range(2)] for rows in range(101)]
-        for i in range(totalCandi):
-            if (arrCandi[i][0] != str("inf")):
-                candiAda[i][0] = arrCandi[i][0]
-                candiAda[i][1] = (int(arrCandi[i][2])*10000) + (int(arrCandi[i][3])*15000) + (int(arrCandi[i][4])*7500)
+        for i in range(100):
+            if (arrCandiHitung[i][0] != str("inf")):
+                candiAda[i][0] = arrCandiHitung[i][0]
+                candiAda[i][1] = (int(arrCandiHitung[i][2])*10000) + (int(arrCandiHitung[i][3])*15000) + (int(arrCandiHitung[i][4])*7500)
+
         tajMahal = candiAda[0][0]
-        biayaTajMahal = float("inf")      
+        biayaTajMahal = float("-inf")      
         for i in range(100):
             if candiAda[i][1] > biayaTajMahal:
                 tajMahal = candiAda[i][0]
@@ -493,24 +501,25 @@ def laporancandi():
                     biayaTajMurah = candiAda[i][1]           
 
                 
-    hargaCandi(arrCandi)
+    hargaCandi()
 
 
     def laporCandi():
-        if ((tajMahal != 0) and (tajMurah != 0)):
-            print(f"Total Candi: {totalCandi}")
-            print(f"Total Pasir yang digunakan: {usedPasir}")
-            print(f"Total Batu yang digunakan: {usedBatu}")
-            print(f"Total Air yang digunakan: {usedAir}")
-            print(f"ID Candi Termahal: {tajMahal} (Rp {biayaTajMahal})")
-            print(f"ID Candi Termurah: {tajMurah} (Rp {biayaTajMurah})")
-        elif ((tajMahal == 0) and (tajMurah == 0)):
+        if totalCandi == 0:
             print(f"Total Candi: {totalCandi}")
             print(f"Total Pasir yang digunakan: {usedPasir}")
             print(f"Total Batu yang digunakan: {usedBatu}")
             print(f"Total Air yang digunakan: {usedAir}")
             print(f"ID Candi Termahal: -")
             print(f"ID Candi Termurah: -")
+        else:
+            print(f"Total Candi: {totalCandi}")
+            print(f"Total Pasir yang digunakan: {usedPasir}")
+            print(f"Total Batu yang digunakan: {usedBatu}")
+            print(f"Total Air yang digunakan: {usedAir}")
+            print(f"ID Candi Termahal: {tajMahal} (Rp {biayaTajMahal})")
+            print(f"ID Candi Termurah: {tajMurah} (Rp {biayaTajMurah})")
+            
 
     laporCandi()
     return
