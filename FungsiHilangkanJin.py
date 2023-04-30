@@ -19,7 +19,7 @@ def HilangkanJin():
             arrUser[102] = ['inf','inf','inf']
             for j in range (100):
                 if arrCandi[i][1]==jin_hilang:
-                    arrCandi[i]==['inf','inf','inf','inf','inf']
+                    arrCandi[i]=['inf','inf','inf','inf','inf']
         elif hilang=="N" or hilang=="n":
             print("Jin tidak jadi dihilangkan.")
         
