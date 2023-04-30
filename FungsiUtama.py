@@ -80,7 +80,9 @@ def my_sort(arr):
     return arr
 
 def append_lain(arr,c):
+    newarr = arr
     for i in range (2,102):
         if arr[i]==['inf','inf','inf']:
-            arr[i]==c
-    return arr
+            newarr[i]=c
+            break
+    return newarr
