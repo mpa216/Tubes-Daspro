@@ -4,7 +4,7 @@ def HilangkanJin():
 
     jin_hilang = str(input("Masukkan username jin : "))
     kondisi= False
-    for i in range (2,103):
+    for i in range (2,102):
         if arrUser[i][0]==jin_hilang:
             kondisi = True
             break
