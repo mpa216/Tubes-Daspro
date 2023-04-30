@@ -31,23 +31,7 @@ arrBahan = [['pasir', 'blank', 'inf'], ['batu', 'blank', 'inf'], ['air', 'blank'
 
 arrUser[0] = ["Bondowoso","cintaroro","bandung_bondowoso"]
 arrUser[1] = ["Roro","gasukabondo","roro_jonggrang"]
-# arrUser[2] = ["jin1","gasukabondo","jin_pembangun"]
-# arrUser[3] = ["jin2","gasukabondo","jin_pengumpul"]
-# arrCandi[1][0] = "1"
-# arrCandi[1][1] = "Si Cakep"
-# arrCandi[1][2] = "2"
-# arrCandi[1][3] = "3"
-# arrCandi[1][4] = "4"
-#                              #  ----> kaloo mo test case
-# arrCandi[2][0] = "2"
-# arrCandi[2][1] = "Si Hebat"
-# arrCandi[2][2] = "4"
-# arrCandi[2][3] = "2"
-# arrCandi[2][4] = "5"
 
-arrBahan[0][2] = "4"
-arrBahan[1][2] = "5"
-arrBahan[2][2] = "7"
 
 def login():
         global arrUser
@@ -92,9 +76,9 @@ def tambahJin():
         x = int(input("Masukkan nomor jenis jin yang ingin dipanggil: "))
     if length(arrUser)<102:
         if x==1:
-            tipe = "Pengumpul"
+            tipe = "jin_pengumpul"
         else:
-            tipe = "Pembangun"
+            tipe = "jin_pembangun"
         print(f"Memilih jin {tipe}.")
         username_jin = str(input("Masukkan username jin: "))
         password_jin = str(input("Masukkan password jin: "))
@@ -327,7 +311,7 @@ def laporanjin():
         global totalJin
         totalJin = 0
         for i in range(102):
-            if ((arrUser[i][2] == "Pembangun")  or (arrUser[i][2] == "Pengumpul")):
+            if ((arrUser[i][2] == "jin_pembangun")  or (arrUser[i][2] == "jin_pengumpul")):
                 totalJin += 1
         
 
@@ -335,7 +319,7 @@ def laporanjin():
         global totalJinPengumpul
         totalJinPengumpul = 0
         for i in range(102):
-            if (arrUser[i][2] == 'Pengumpul'):
+            if (arrUser[i][2] == 'jin_pengumpul'):
                 totalJinPengumpul += 1
 
 
@@ -343,7 +327,7 @@ def laporanjin():
         global totalJinPembangun
         totalJinPembangun = 0
         for i in range(102):
-            if (arrUser[i][2] == "Pembangun"):
+            if (arrUser[i][2] == "jin_pembangun"):
                 totalJinPembangun += 1
         
         
