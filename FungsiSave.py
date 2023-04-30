@@ -2,7 +2,7 @@ import argparse
 import os
 def tulis_header(header,path):
     with open(path,'w') as f:
-        return f.write(f'{header};\n')
+        return f.write(f'{header}\n')
     
 def save(nama_folder):
     global arrUser
@@ -16,10 +16,13 @@ def save(nama_folder):
         with open(f"{nama_folder}\\user.csv", "a") as file:
             skip = True
             tulis_header("username;password;role",f"{nama_folder}\\user.csv")
-            for row in range (102):
+            for row in range (103):
                 for col in range (3):
                     if arrUser[row][col]!='inf':
-                        file.write(str(arrUser[row][col]) + ";")
+                        if col<2:
+                            file.write(str(arrUser[row][col]) + ";")
+                        else:
+                            file.write(str(arrUser[row][col]))
                         skip = False
                 if not skip:
                     file.write("\n")
@@ -31,7 +34,10 @@ def save(nama_folder):
             for row in range (100):
                 for col in range (5):
                     if arrCandi[row][col]!='inf':
-                        file.write(str(arrCandi[row][col]) + ";")
+                        if col<4:
+                            file.write(str(arrCandi[row][col]) + ";")
+                        else:
+                            file.write(str(arrCandi[row][col]))
                         skip = False
                 if not skip:
                     file.write("\n")
@@ -43,7 +49,10 @@ def save(nama_folder):
             for row in range (3):
                 for col in range (3):
                     if arrBahan[row][col]!='inf':
-                        file.write(str(arrBahan[row][col]) + ";")
+                        if col<2:
+                            file.write(str(arrBahan[row][col]) + ";")
+                        else:
+                            file.write(str(arrBahan[row][col]))
                         skip = False
                 if not skip:
                     file.write("\n")
@@ -51,7 +60,7 @@ def save(nama_folder):
     return
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description="Prosedur untuk menyimpan data ke file-file dalam suatu folder.")
+    parser = argparse.ArgumentParser(description="Prosedur untuk memuat data dari file-file dalam suatu folder.")
     parser.add_argument('nama_folder', type=str, help="Nama folder yang berisi file-file penyimpanan.")
     args = parser.parse_args()
     save(args.nama_folder)
