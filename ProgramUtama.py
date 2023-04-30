@@ -3,11 +3,6 @@ import random
 import sys
 import argparse
 import os
-arrUser = arrUser = [['inf' for j in range (3)] for i in range (102)]
-arrCandi = [['inf' for j in range (5)] for i in range (100)]
-arrBahan = [['inf' for j in range (3)] for i in range (3)]
-roleAktif = ''
-userAktif = ''
 
 def login():
         global arrUser
@@ -605,10 +600,10 @@ def hilangkanjin():
             kondisi = True
             break
     if kondisi:
-        hilang = str(input("Apakah anda yakin ingin menghapus jin dengan username Jin1 (Y/N)? "))
+        hilang = str(input(f"Apakah anda yakin ingin menghapus jin dengan username {jin_hilang} (Y/N)? "))
         while not (hilang=="y" or hilang=="Y" or hilang=="N" or hilang=="n"):
             print("Input salah.")
-            hilang = str(input("Apakah anda yakin ingin menghapus jin dengan username Jin1 (Y/N)? "))
+            hilang = str(input(f"Apakah anda yakin ingin menghapus jin dengan username {jin_hilang} (Y/N)? "))
         if hilang=='Y' or hilang=='y':
             for j in range (2,101):
                 arrUser[j]=arrUser[j+1]
@@ -651,10 +646,7 @@ arrBahan = [['pasir', 'blank', 'inf'], ['batu', 'blank', 'inf'], ['air', 'blank'
                     # arrBahan[2][0], arrBahan[2][1],arrBahan[2][2] = "Air", "Blank", jumlah
 # Contoh [["Pasir","Blank", 40], ["Batu","Blank","30"],["Air","Blank","50"]]
 
-arrUser[0] = ["Bondowoso","cintaroro","bandung_bondowoso"]
-arrUser[1] = ["Roro","gasukabondo","roro_jonggrang"]
-arrUser[2] = ["jin1","gasukabondo","jin_pembangun"]
-arrUser[3] = ["jin2","gasukabondo","jin_pengumpul"]
+
 
 
 on = True
