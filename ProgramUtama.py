@@ -335,7 +335,7 @@ def laporanjin():
         global totalJinPengumpul
         totalJinPengumpul = 0
         for i in range(102):
-            if (arrUser[i][2] == 'jin_pembangun'):
+            if (arrUser[i][2] == 'jin_pengumpul'):
                 totalJinPengumpul += 1
 
 
