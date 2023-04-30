@@ -25,15 +25,15 @@ Algoritma
       output(“Memilih Jin ”+tipe)
       Input(username_jin,password_jin)
       i <- 1
-      repeat
-	    if arrUser[i][1]=username_jin {indeks pertama dari suatu array adalah 1} then
-          output("Username sudah diambil")
-          tambah <- False
-        else
-          tambah <-True
-       stop arrUser[i][1]=username_jin {indeks pertama dari suatu array adalah 1}
-       if i<=103 then
-         i <- i+1
+      iterate
+        if arrUser[i][1]=username_jin {indeks pertama dari suatu array adalah 1} then
+            output("Username sudah diambil")
+            tambah <- False
+          else
+            tambah <-True
+        if i<=103 then
+          i <- i+1
+        stop arrUser[i][1]=username_jin {indeks pertama dari suatu array adalah 1}
     if tambah then
       arrUser = append_lain(arrUser,[username_jin,password_jin,tipe])
   else
