@@ -1,7 +1,7 @@
 def UbahTipe(arrUser):
     ada = False
     jinygdiubah = str(input("Masukkan username jin :"))
-    for i in range (2,103):
+    for i in range (2,102):
         if arrUser[i][0]==jinygdiubah:
             ada = True
             break
