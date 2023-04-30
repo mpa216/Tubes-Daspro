@@ -31,19 +31,19 @@ arrBahan = [['pasir', 'blank', 'inf'], ['batu', 'blank', 'inf'], ['air', 'blank'
 
 arrUser[0] = ["Bondowoso","cintaroro","bandung_bondowoso"]
 arrUser[1] = ["Roro","gasukabondo","roro_jonggrang"]
-arrUser[2] = ["jin1","gasukabondo","jin_pembangun"]
-arrUser[3] = ["jin2","gasukabondo","jin_pengumpul"]
-arrCandi[1][0] = "1"
-arrCandi[1][1] = "Si Cakep"
-arrCandi[1][2] = "2"
-arrCandi[1][3] = "3"
-arrCandi[1][4] = "4"
-                             #  ----> kaloo mo test case
-arrCandi[2][0] = "2"
-arrCandi[2][1] = "Si Hebat"
-arrCandi[2][2] = "4"
-arrCandi[2][3] = "2"
-arrCandi[2][4] = "5"
+# arrUser[2] = ["jin1","gasukabondo","jin_pembangun"]
+# arrUser[3] = ["jin2","gasukabondo","jin_pengumpul"]
+# arrCandi[1][0] = "1"
+# arrCandi[1][1] = "Si Cakep"
+# arrCandi[1][2] = "2"
+# arrCandi[1][3] = "3"
+# arrCandi[1][4] = "4"
+#                              #  ----> kaloo mo test case
+# arrCandi[2][0] = "2"
+# arrCandi[2][1] = "Si Hebat"
+# arrCandi[2][2] = "4"
+# arrCandi[2][3] = "2"
+# arrCandi[2][4] = "5"
 
 arrBahan[0][2] = "4"
 arrBahan[1][2] = "5"
