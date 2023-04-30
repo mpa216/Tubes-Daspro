@@ -1,9 +1,7 @@
-import random
-
 def length(x):
     i, sum=0,0
-    while i!=103:
-        if x[i]!=str('inf'): sum+=1
+    while i!=102:
+        if x[i][0]!=str('inf'): sum+=1
         i+=1
     return sum
 
@@ -82,7 +80,7 @@ def my_sort(arr):
     return arr
 
 def append_lain(arr,c):
-    for i in range (2,103):
+    for i in range (2,102):
         if arr[i]==['inf','inf','inf']:
             arr[i]==c
     return arr
