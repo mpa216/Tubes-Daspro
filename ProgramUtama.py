@@ -327,7 +327,7 @@ def laporanjin():
         global totalJin
         totalJin = 0
         for i in range(102):
-            if ((arrUser[i][2] == "jin_pembangun")  or (arrUser[i][2] == "jin_pengumpul")):
+            if ((arrUser[i][2] == "Pembangun")  or (arrUser[i][2] == "Pengumpul")):
                 totalJin += 1
         
 
@@ -335,7 +335,7 @@ def laporanjin():
         global totalJinPengumpul
         totalJinPengumpul = 0
         for i in range(102):
-            if (arrUser[i][2] == 'jin_pengumpul'):
+            if (arrUser[i][2] == 'Pengumpul'):
                 totalJinPengumpul += 1
 
 
@@ -343,7 +343,7 @@ def laporanjin():
         global totalJinPembangun
         totalJinPembangun = 0
         for i in range(102):
-            if (arrUser[i][2] == "jin_pembangun"):
+            if (arrUser[i][2] == "Pembangun"):
                 totalJinPembangun += 1
         
         
