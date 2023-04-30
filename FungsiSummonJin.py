@@ -1,3 +1,4 @@
+from ProgramUtama import append_lain, length
 def jenis_jin():
     global arrUser
     x = int(input("Masukkan nomor jenis jin yang ingin dipanggil: "))
