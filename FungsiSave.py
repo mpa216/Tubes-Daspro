@@ -16,7 +16,7 @@ def save(nama_folder):
         with open(f"{nama_folder}\\user.csv", "a") as file:
             skip = True
             tulis_header("username;password;role",f"{nama_folder}\\user.csv")
-            for row in range (103):
+            for row in range (102):
                 for col in range (3):
                     if arrUser[row][col]!='inf':
                         file.write(str(arrUser[row][col]) + ";")
