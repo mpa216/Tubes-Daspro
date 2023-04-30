@@ -3,7 +3,7 @@ import random
 import sys
 import argparse
 import os
-arrUser = arrUser = [['inf' for j in range (3)] for i in range (103)]
+arrUser = arrUser = [['inf' for j in range (3)] for i in range (102)]
 arrCandi = [['inf' for j in range (5)] for i in range (100)]
 arrBahan = [['inf' for j in range (3)] for i in range (3)]
 roleAktif = ''
@@ -55,7 +55,7 @@ def tambahJin():
             print("Memilih jin “Pengumpul”.")
             username_jin = str(input("Masukkan username jin: "))
             password_jin = str(input("Masukkan password jin: "))
-            for i in range (2,103):
+            for i in range (2,102):
                 if arrUser[i][0]==username_jin:
                     print(f'Username "{username_jin}" sudah diambil!')
                     username_jin = str(input("Masukkan username jin: "))
@@ -805,7 +805,7 @@ def save():
     with open(f"{path}\\user.csv", "a") as file:
         skip = True
         tulis_header("username;password;role",f"{path}\\user.csv")
-        for row in range (103):
+        for row in range (102):
             for col in range (3):
                 if arrUser[row][col]!='inf':
                     if col<2:
