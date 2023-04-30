@@ -60,8 +60,6 @@ def laporanCandi():
             if (arrCandiHitung[i][0] != str("inf")):
                 candiAda[i][0] = arrCandiHitung[i][0]
                 candiAda[i][1] = (int(arrCandiHitung[i][2])*10000) + (int(arrCandiHitung[i][3])*15000) + (int(arrCandiHitung[i][4])*7500)
-
-            # elif(arrCandi[i][0] )
         tajMahal = candiAda[0][0]
         biayaTajMahal = float("-inf")      
         for i in range(100):
