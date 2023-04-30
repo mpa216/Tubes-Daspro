@@ -1,9 +1,4 @@
 import os
-arrUser = [['inf' for j in range (3)] for i in range (103)]
-arrUser[1] = ['Bandung', 'cintaroro', 'bandungbondowoso']
-arrUser[5] = ['Bandung', 'simproro', 'bandungbondowoso']
-arrCandi = [['inf' for j in range (5)] for i in range (100)]
-arrBahan = [['inf' for j in range (3)] for i in range (3)]
 
 def tulis_header(header,path):
     with open(path,'w') as f:
