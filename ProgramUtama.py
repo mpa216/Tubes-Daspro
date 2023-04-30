@@ -77,7 +77,7 @@ def tambahJin():
     if length(arrUser)<102:
         while not tambah:
             if x==1:
-                tipe = "jin_pengumpul""
+                tipe = "jin_pengumpul"
             else:
                 tipe = "jin_pembangun"
             print(f"Memilih jin {tipe}.")
