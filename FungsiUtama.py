@@ -86,3 +86,57 @@ def append_lain(arr,c):
             newarr[i]=c
             break
     return newarr
+
+def mappend_lain_2(arr, c):
+    new_arr = [None] * (len_lain(arr) + 2)
+    for i in range(len_lain(arr)):
+        new_arr[i] = arr[i]
+    new_arr[len_lain(arr)] = c
+    new_arr[len_lain(arr)+1] = 'inf'
+    return new_arr
+
+def len_lain(arr):
+    i=0
+    sum=0
+    while arr[i]!='inf':
+        sum+=1
+        i+=1
+    return sum
+
+def baca_csv(file_path, delimiter=';'):
+    rows = ['inf']
+    with open(file_path, 'r') as file:
+        line = file.readline()
+        print(line)
+        while line:
+            row = ['inf']
+            cell_value = ''
+            dalampetik = False
+            for i in range (len(line)):
+                if line[i] == "'" and not dalampetik:
+                    dalampetik = True
+                elif (line[i] == '"') and dalampetik:
+                    dalampetik = False
+                elif line[i] == delimiter and not dalampetik:
+                    row = mappend_lain_2(row, cell_value)
+                    cell_value = ''
+                else:
+                    cell_value += line[i]
+            row = mappend_lain_2(row, cell_value)
+            rows = mappend_lain_2(rows, row)
+            line = file.readline()
+    return rows
+
+def hapus_space(line):
+    arr = ['*' for i in range (len(line)-2)]
+    for i in range (len(line)-2):
+        arr[i]=line[i]
+    baris = ''
+    for i in range (len(line)-2):
+        baris = baris+arr[i]
+    print(arr)
+    return baris
+
+def tulis_header(header,path):
+    with open(path,'w') as f:
+        return f.write(f'{header}\n')
