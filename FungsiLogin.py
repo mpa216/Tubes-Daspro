@@ -21,4 +21,4 @@ def login():
             print(kondisi)
             if kondisi == "Password salah!" or kondisi == "Username tidak terdaftar!":
                 username_login, password_login = str(input("Username: ")), str(input("Password: "))
-        return useraktif, roleaktif
+        return
