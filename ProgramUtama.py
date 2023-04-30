@@ -98,7 +98,7 @@ def tambahJin():
         print(f"Memilih jin {tipe}.")
         username_jin = str(input("Masukkan username jin: "))
         password_jin = str(input("Masukkan password jin: "))
-        for i in range (2,103):
+        for i in range (2,102):
             if arrUser[i][0]==username_jin:
                 print(f'Username "{username_jin}" sudah diambil!')
                 username_jin = str(input("Masukkan username jin: "))
