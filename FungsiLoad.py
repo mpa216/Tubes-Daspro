@@ -61,7 +61,7 @@ def load(nama_folder):
             data_candi = baca_csv(file.name, delimiter=";")
             for i in range (1,len_lain(data_candi)):
                 for j in range (5):
-                    arrCandi[i-1][j]=data_candi[i][j]
+                    arrCandi[int(data_candi[i][0])-1][j]=data_candi[i][j]
 
         with open(f'{nama_folder}\\bahan_bangunan.csv', 'r') as file:
             data_bahan = baca_csv(file.name, delimiter=";")
