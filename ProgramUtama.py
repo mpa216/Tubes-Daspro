@@ -69,6 +69,7 @@ def logout():
 
 def tambahJin():
     global arrUser
+    print("Jenis jin yang dapat dipanggil: \n (1) Pengumpul - Bertugas mengumpulkan bahan bangunan\n (2) Pembangun - Bertugas membangun candi")
     x = int(input("Masukkan nomor jenis jin yang ingin dipanggil: "))
     tambah = False
     while not (x==1 or x==2):
