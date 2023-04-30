@@ -73,25 +73,24 @@ def tambahJin():
     tambah = False
     while not (x==1 or x==2):
         print(f'Tidak ada jenis jin bernomor "{x}"')
-        x = int(input("Masukkan nomor jenis jin yang ingin dipanggil: "))
+        x = int(input("Masukkan nomor jenis jin yang ingin dipanggil: "))    
     if length(arrUser)<102:
-        if x==1:
-            tipe = "jin_pengumpul"
-        else:
-            tipe = "jin_pembangun"
-        print(f"Memilih jin {tipe}.")
-        username_jin = str(input("Masukkan username jin: "))
-        password_jin = str(input("Masukkan password jin: "))
-        for i in range (2,102):
-            if arrUser[i][0]==username_jin:
-                print(f'Username "{username_jin}" sudah diambil!')
-                username_jin = str(input("Masukkan username jin: "))
-                tambah = False
-                break
+        while not tambah:
+            if x==1:
+                tipe = "Pengumpul"
             else:
-                tambah = True
-        if tambah:
-            arrUser = append_lain(arrUser,[username_jin,password_jin,tipe])
+                tipe = "Pembangun"
+            print(f"Memilih jin {tipe}.")
+            username_jin = str(input("Masukkan username jin: "))
+            password_jin = str(input("Masukkan password jin: "))
+            for i in range (2,102):
+                if arrUser[i][0]==username_jin:
+                    print(f'Username "{username_jin}" sudah diambil!')
+                    username_jin = str(input("Masukkan username jin: "))
+                    tambah = False
+                    break
+                else:
+                    tambah = True
         
     else:
         print("Jin sudah Penuh")
