@@ -14,9 +14,9 @@ def HilangkanJin():
             print("Input salah.")
             hilang = str(input("Apakah anda yakin ingin menghapus jin dengan username Jin1 (Y/N)? "))
         if hilang=='Y' or hilang=='y':
-            for j in range (2,102):
+            for j in range (2,101):
                 arrUser[i]=arrUser[i+1]
-            arrUser[102] = ['inf','inf','inf']
+            arrUser[101] = ['inf','inf','inf']
             for j in range (100):
                 if arrCandi[i][1]==jin_hilang:
                     arrCandi[i]=['inf','inf','inf','inf','inf']
