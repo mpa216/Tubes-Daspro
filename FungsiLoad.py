@@ -87,7 +87,7 @@ def load(nama_folder):
                 for j in range (3):
                     arrBahan[i-1][j]=data_bahan[i][j]
                 if arrBahan[i-1][2]!='inf':
-                    arrBahan[i-1][2] = hapus_space(arrUser[i-1][2])
+                    arrBahan[i-1][2] = hapus_space(arrBahan[i-1][2])
             print(arrBahan)
             return
 
