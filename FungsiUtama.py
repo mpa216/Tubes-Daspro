@@ -127,11 +127,11 @@ def baca_csv(file_path, delimiter=';'):
     return rows
 
 def hapus_space(line):
-    arr = ['*' for i in range (len(line)-2)]
-    for i in range (len(line)-2):
+    arr = ['*' for i in range (len(line)-1)]
+    for i in range (len(line)-1):
         arr[i]=line[i]
     baris = ''
-    for i in range (len(line)-2):
+    for i in range (len(line)-1):
         baris = baris+arr[i]
     return baris
 
