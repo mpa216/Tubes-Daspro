@@ -135,7 +135,6 @@ def save():
             skip=True
     return
 
-
 def login():
         global arrUser
         global userAktif
@@ -151,6 +150,8 @@ def login():
                         userAktif = str(username_login)
                         roleAktif = str(arrUser[i][2])
                         cobalogin+=1
+                        if cobalogin>1:
+                            kondisi = (f"Anda telah login dengan username {userAktif}, silahkan lakukan “logout” sebelum melakukan login kembali.  ")
                         udahlogin = True
                         break
                     else:
@@ -159,10 +160,6 @@ def login():
                 else:
                     kondisi =("Username tidak terdaftar!")
             print(kondisi)
-        if cobalogin>1:
-            print(f"Anda telah login dengan username {userAktif}, silahkan lakukan “logout” sebelum melakukan login kembali.  ")
-            userAktif = str(username_login)
-            roleAktif = str(arrUser[i][2])        
         return
 
 def logout():
