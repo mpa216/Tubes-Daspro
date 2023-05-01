@@ -19,21 +19,23 @@ Algoritma
   If length(arrUser)<102 then
     while not tambah do
       If x=1 then
-        tipe <- “jin_pengumpul”
+        tipe <- “Pengumpul”
+        role <- "jin_pengumpul"
       else
         tipe <- “jin_pembangun”
+        role <- "jin_pembangun"
       output(“Memilih Jin ”+tipe)
       Input(username_jin,password_jin)
-      i <- 1
+      i <- 0 {indeks pertama 0}
       iterate
-        if arrUser[i][1]=username_jin {indeks pertama dari suatu array adalah 1} then
+        if arrUser[i][0]=username_jin {indeks pertama dari suatu array adalah 1} then
             output("Username sudah diambil")
             tambah <- False
           else
             tambah <-True
-        if i<=103 then
-          i <- i+1
-        stop arrUser[i][1]=username_jin {indeks pertama dari suatu array adalah 1}
+        stop (i>102)
+        i <- i+1
+        stop arrUser[i][0]=username_jin {indeks pertama dari suatu array adalah 1}
     if tambah then
       arrUser = append_lain(arrUser,[username_jin,password_jin,tipe])
   else
