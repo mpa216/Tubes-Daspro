@@ -749,7 +749,7 @@ def hilangkanjin():
 
 
   
-  while on :
+while on :
     while roleAktif == "" :
         # print(arrUser)
         cmd = input("cmd: ")
