@@ -7,7 +7,7 @@ procedure HilangkanJin():
   iterate (not kondisi) or x<103 do
     if arrUser[i][1] = jin_hilang then
       kondisi <- True
-    stop kondisi = True
+    stop (kondisi = True)
     i <- i+1
   if kondisi then
     input(hilang)
