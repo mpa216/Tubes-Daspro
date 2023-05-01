@@ -141,8 +141,8 @@ def login():
         global userAktif
         global roleAktif
         global cobalogin
-
-        while userAktif=="":
+        udahlogin =False
+        while not udahlogin:
             username_login, password_login = str(input("Username: ")), str(input("Password: "))
             for i in range (0,102):
                 if arrUser[i][0]==username_login:
@@ -151,6 +151,7 @@ def login():
                         userAktif = str(username_login)
                         roleAktif = str(arrUser[i][2])
                         cobalogin+=1
+                        udahlogin = True
                         break
                     else:
                         kondisi = ("Password salah!")
