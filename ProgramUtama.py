@@ -50,7 +50,6 @@ def load(nama_folder):
                     arrUser[i-1][j]=data_user[i][j]
                 if arrUser[i-1][2]!='inf':
                     arrUser[i-1][2] = hapus_space(arrUser[i-1][2])
-            print(arrUser)
             
         with open(f'{nama_folder}\\candi.csv', 'r') as file:
             data_candi = baca_csv(file.name, delimiter=";")
@@ -59,16 +58,14 @@ def load(nama_folder):
                     arrCandi[int(data_candi[i][0])-1][j]=data_candi[i][j]
                 if arrCandi[int(data_candi[i][0])-1][4]!='inf':
                     arrCandi[int(data_candi[i][0])-1][4] = hapus_space(arrCandi[int(data_candi[i][0])-1][4])
-            print(arrCandi)
 
         with open(f'{nama_folder}\\bahan_bangunan.csv', 'r') as file:
             data_bahan = baca_csv(file.name, delimiter=";")
             for i in range (1,len_lain(data_bahan)):
-                for j in range (3):
+                for j in range (1,3):
                     arrBahan[i-1][j]=data_bahan[i][j]
                 if arrBahan[i-1][2]!='inf':
                     arrBahan[i-1][2] = hapus_space(arrBahan[i-1][2])
-            print(arrBahan)
             return
 
 if __name__ == '__main__':
