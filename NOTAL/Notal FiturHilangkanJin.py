@@ -4,10 +4,11 @@ procedure HilangkanJin():
   input(jin_hilang)
   kondisi <- False
   i<-1
-  while (not kondisi) or x<103 do
+  iterate (not kondisi) or x<103 do
     if arrUser[i][1] = jin_hilang then
       kondisi <- True
     stop kondisi = True
+    i <- i+1
   if kondisi then
     input(hilang)
     while not (hilang="y" or hilang="Y" or hilang="N" or hilang="n") then
