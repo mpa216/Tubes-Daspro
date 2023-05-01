@@ -99,11 +99,10 @@ def login():
             for i in range (0,102):
                 if arrUser[i][0]==username_login:
                     if arrUser[i][1]==password_login:
-                        print(f'Selamat datang, {username_login}!\nMasukkan command “help” untuk daftar command yang dapat kamu panggil.')
+                        kondisi = (f'Selamat datang, {username_login}!\nMasukkan command “help” untuk daftar command yang dapat kamu panggil.')
                         userAktif = str(username_login)
                         roleAktif = str(arrUser[i][2])
-                        return
-                        
+                        break
                     else:
                         kondisi = ("Password salah!")
                         break
@@ -112,7 +111,7 @@ def login():
             print(kondisi)
         if userAktif!="":
             print(f"Anda telah login dengan username {userAktif}, silahkan lakukan “logout” sebelum melakukan login kembali.  ")
-            return
+        return
 
 def logout():
     global userAktif
