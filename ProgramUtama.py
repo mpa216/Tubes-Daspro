@@ -187,9 +187,9 @@ def tambahJin():
     if length(arrUser)<102:
         while not tambah:
             if x==1:
-                tipe = "jin_pengumpul"
+                tipe,role = "Pengumpul","jin_pengumpul"
             else:
-                tipe = "jin_pembangun"
+                tipe,role = "Pembangun","jin_pembangun"
             print(f"Memilih jin {tipe}.")
             username_jin = str(input("Masukkan username jin: "))
             password_jin = str(input("Masukkan password jin: "))
@@ -201,7 +201,7 @@ def tambahJin():
                 else:
                     tambah = True
         if tambah:
-            append_lain(arrUser,[username_jin,password_jin,tipe])
+            append_lain(arrUser,[username_jin,password_jin,role])
     else:
         print("Jin sudah Penuh")
     return
