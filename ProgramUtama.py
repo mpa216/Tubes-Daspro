@@ -5,6 +5,7 @@ import argparse
 import os
 
 on = True
+cobalogin = 0
 arrUser     = [[str("inf") for cols in range (3)] for rows in range(102)] # array 2 dimensi (102 x 3) dengan index 0 dimiliki Bandung, 1 dimiilki Roro, dan 2-101 milik para jin
 # arrUser[x][0], arrUser[x][1], arrUser[x][2] = Username, Password, Role
 # Contoh [["Si Cakep","Saya cakep","Saya Cakep"], ..... , ["Bandung","Bondowoso","Antagonist"] ,["Roro","Jonggrang","Protagonist"]]
@@ -139,6 +140,7 @@ def login():
         global arrUser
         global userAktif
         global roleAktif
+        global cobalogin
 
         while userAktif=="":
             username_login, password_login = str(input("Username: ")), str(input("Password: "))
@@ -148,6 +150,7 @@ def login():
                         kondisi = (f'Selamat datang, {username_login}!\nMasukkan command “help” untuk daftar command yang dapat kamu panggil.')
                         userAktif = str(username_login)
                         roleAktif = str(arrUser[i][2])
+                        cobalogin+=1
                         break
                     else:
                         kondisi = ("Password salah!")
@@ -155,18 +158,23 @@ def login():
                 else:
                     kondisi =("Username tidak terdaftar!")
             print(kondisi)
-        if userAktif!="":
+        if cobalogin>1:
             print(f"Anda telah login dengan username {userAktif}, silahkan lakukan “logout” sebelum melakukan login kembali.  ")
+            userAktif = str(username_login)
+            roleAktif = str(arrUser[i][2])        
         return
 
 def logout():
     global userAktif
     global roleAktif
+    global cobalogin
+    cobalogin=0
     if userAktif == "" :
         return
     else :
         userAktif = ""
         roleAktif = ""
+
 
 def tambahJin():
     global arrUser
