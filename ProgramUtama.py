@@ -66,7 +66,7 @@ def load(nama_folder):
                     arrBahan[i-1][j]=data_bahan[i][j]
                 if arrBahan[i-1][2]!='inf':
                     arrBahan[i-1][2] = hapus_space(arrBahan[i-1][2])
-            return
+        return
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Prosedur untuk memuat data dari file-file dalam suatu folder.")
