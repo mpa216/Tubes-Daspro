@@ -742,7 +742,7 @@ def hilangkanjin():
             print("Input salah.")
             hilang = str(input(f"Apakah anda yakin ingin menghapus jin dengan username {jin_hilang} (Y/N)? "))
         if hilang=='Y' or hilang=='y':
-            for j in range (2,101):
+            for j in range (i,101):
                 arrUser[j]=arrUser[j+1]
             arrUser[101] = ['inf','inf','inf']
             for j in range (100):
@@ -752,7 +752,6 @@ def hilangkanjin():
             print("Jin tidak jadi dihilangkan.")
     else :
         print("Tidak ada jin dengan username itu")
-
     return
 
 
