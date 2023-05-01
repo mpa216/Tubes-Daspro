@@ -836,6 +836,8 @@ while on :
             login()
         elif cmd == "save" :
             save()
+        elif cmd == "help" :
+            help()           
         else :
             print("Anda tidak memiliki akses ke fitur tersebut")
     while roleAktif == "jin_pembangun" :
@@ -852,6 +854,8 @@ while on :
             login()
         elif cmd == "save" :
             save()
+        elif cmd == "help" :
+            help()            
         else :
             print("Anda tidak memiliki akses ke fitur tersebut")
 
