@@ -216,10 +216,10 @@ def ubahtipe():
             break
     if ada:
         if arrUser[i][2]=="jin_pembangun":
-            tipe = "jin_pengumpul"
+            tipe,kebalikan = "Pembangun","Pengumpul"
         else:
-            tipe = "jin_pembangun"
-        masukan = str(input(f'Jin ini bertipe {arrUser[i][2]}. Yakin ingin mengubah ke tipe {tipe} (Y/N)? '))
+            tipe,kebalikan = "Pengumpul","Pembangun"
+        masukan = str(input(f'Jin ini bertipe {tipe}. Yakin ingin mengubah ke tipe {kebalikan} (Y/N)? '))
         if masukan=='Y' or masukan=='y':
             arrUser[i][2]=tipe
             print("Jin telah berhasil diubah.")
