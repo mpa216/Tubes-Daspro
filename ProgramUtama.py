@@ -29,6 +29,49 @@ arrBahan = [['pasir', 'blank', 'inf'], ['batu', 'blank', 'inf'], ['air', 'blank'
                     # arrBahan[2][0], arrBahan[2][1],arrBahan[2][2] = "Air", "Blank", jumlah
 # Contoh [["Pasir","Blank", 40], ["Batu","Blank","30"],["Air","Blank","50"]]
 
+def load(nama_folder):
+    global arrUser
+    global arrCandi
+    global arrBahan
+    #Cek apakah folder ada
+    if not os.path.exists(nama_folder):
+        print(f"Folder '{nama_folder}' tidak ditemukan.")
+        return
+
+    #Load data dari file-file dalam folder
+    else:
+        with open(f'{nama_folder}\\user.csv', 'r') as file:
+            data_user = baca_csv(file.name, delimiter=";")
+            for i in range (1,len_lain(data_user)):
+                for j in range (3):
+                    arrUser[i-1][j]=data_user[i][j]
+                if arrUser[i-1][2]!='inf':
+                    arrUser[i-1][2] = hapus_space(arrUser[i-1][2])
+            
+        with open(f'{nama_folder}\\candi.csv', 'r') as file:
+            data_candi = baca_csv(file.name, delimiter=";")
+            for i in range (1,len_lain(data_candi)):
+                for j in range (5):
+                    arrCandi[int(data_candi[i][0])-1][j]=data_candi[i][j]
+                if arrCandi[int(data_candi[i][0])-1][4]!='inf':
+                    arrCandi[int(data_candi[i][0])-1][4] = hapus_space(arrCandi[int(data_candi[i][0])-1][4])
+
+        with open(f'{nama_folder}\\bahan_bangunan.csv', 'r') as file:
+            data_bahan = baca_csv(file.name, delimiter=";")
+            for i in range (1,len_lain(data_bahan)):
+                for j in range (1,3):
+                    arrBahan[i-1][j]=data_bahan[i][j]
+                if arrBahan[i-1][2]!='inf':
+                    arrBahan[i-1][2] = hapus_space(arrBahan[i-1][2])
+            return
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description="Prosedur untuk memuat data dari file-file dalam suatu folder.")
+    parser.add_argument('nama_folder', type=str, help="Nama folder yang berisi file-file penyimpanan.")
+    args = parser.parse_args()
+    load(args.nama_folder)
+
+
 def save():
     global arrUser
     global arrCandi
