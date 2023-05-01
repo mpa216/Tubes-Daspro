@@ -32,6 +32,110 @@ arrBahan = [['pasir', 'blank', 'inf'], ['batu', 'blank', 'inf'], ['air', 'blank'
 arrUser[0] = ["Bondowoso","cintaroro","bandung_bondowoso"]
 arrUser[1] = ["Roro","gasukabondo","roro_jonggrang"]
 
+def load(nama_folder):
+    global arrUser
+    global arrCandi
+    global arrBahan
+    #Cek apakah folder ada
+    if not os.path.exists(nama_folder):
+        print(f"Folder '{nama_folder}' tidak ditemukan.")
+        return
+
+    #Load data dari file-file dalam folder
+    else:
+        with open(f'{nama_folder}\\user.csv', 'r') as file:
+            data_user = baca_csv(file.name, delimiter=";")
+            for i in range (1,len_lain(data_user)):
+                for j in range (3):
+                    arrUser[i-1][j]=data_user[i][j]
+                if arrUser[i-1][2]!='inf':
+                    arrUser[i-1][2] = hapus_space(arrUser[i-1][2])
+            print(arrUser)
+            
+        with open(f'{nama_folder}\\candi.csv', 'r') as file:
+            data_candi = baca_csv(file.name, delimiter=";")
+            for i in range (1,len_lain(data_candi)):
+                for j in range (5):
+                    arrCandi[int(data_candi[i][0])-1][j]=data_candi[i][j]
+                if arrCandi[int(data_candi[i][0])-1][4]!='inf':
+                    arrCandi[int(data_candi[i][0])-1][4] = hapus_space(arrCandi[int(data_candi[i][0])-1][4])
+            print(arrCandi)
+
+        with open(f'{nama_folder}\\bahan_bangunan.csv', 'r') as file:
+            data_bahan = baca_csv(file.name, delimiter=";")
+            for i in range (1,len_lain(data_bahan)):
+                for j in range (3):
+                    arrBahan[i-1][j]=data_bahan[i][j]
+                if arrBahan[i-1][2]!='inf':
+                    arrBahan[i-1][2] = hapus_space(arrBahan[i-1][2])
+            print(arrBahan)
+            return
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description="Prosedur untuk memuat data dari file-file dalam suatu folder.")
+    parser.add_argument('nama_folder', type=str, help="Nama folder yang berisi file-file penyimpanan.")
+    args = parser.parse_args()
+    load(args.nama_folder)
+
+def save():
+    global arrUser
+    global arrCandi
+    global arrBahan
+    #Cek apakah folder ada
+    nama_folder = str(input(""))
+    path = f'save\\{nama_folder}'
+
+    print("Saving...")
+    if not os.path.exists(path):
+        print(f"Membuat folder save/{nama_folder}...")
+        os.mkdir(path)
+    print(f"Berhasil menyimpan data di folder {nama_folder}")
+    with open(f"{path}\\user.csv", "a") as file:
+        skip = True
+        tulis_header("username;password;role",f"{path}\\user.csv")
+        for row in range (102):
+            for col in range (3):
+                if arrUser[row][col]!='inf':
+                    if col<2:
+                        file.write(str(arrUser[row][col]) + ";")
+                    else:
+                        file.write(str(arrUser[row][col]))
+                    skip = False
+            if not skip:
+                file.write("\n")
+            skip=True
+        
+    with open(f"{path}\\candi.csv", "a") as file:
+        skip = True
+        tulis_header("id;pembuat;pasir;batu;air",f"{path}\\candi.csv")
+        for row in range (100):
+            for col in range (5):
+                if arrCandi[row][col]!='inf':
+                    if col<4:
+                        file.write(str(arrCandi[row][col]) + ";")
+                    else:
+                        file.write(str(arrCandi[row][col]))
+                    skip = False
+            if not skip:
+                file.write("\n")
+            skip=True
+
+    with open(f"{path}\\bahan_bangunan.csv", "a") as file:
+        skip = True
+        tulis_header("nama;deskripsi;jumlah",f"{path}\\bahan_bangunan.csv")
+        for row in range (3):
+            for col in range (3):
+                if arrBahan[row][col]!='inf':
+                    if col<2:
+                        file.write(str(arrBahan[row][col]) + ";")
+                    else:
+                        file.write(str(arrBahan[row][col]))
+                    skip = False
+            if not skip:
+                file.write("\n")
+            skip=True
+    return
+
 
 def login():
         global arrUser
@@ -747,106 +851,3 @@ while on :
         else :
             print("Anda tidak memiliki akses ke fitur tersebut")
 
-def load(nama_folder):
-    global arrUser
-    global arrCandi
-    global arrBahan
-    #Cek apakah folder ada
-    if not os.path.exists(nama_folder):
-        print(f"Folder '{nama_folder}' tidak ditemukan.")
-        return
-
-    #Load data dari file-file dalam folder
-    else:
-        with open(f'{nama_folder}\\user.csv', 'r') as file:
-            data_user = baca_csv(file.name, delimiter=";")
-            for i in range (1,len_lain(data_user)):
-                for j in range (3):
-                    arrUser[i-1][j]=data_user[i][j]
-                if arrUser[i-1][2]!='inf':
-                    arrUser[i-1][2] = hapus_space(arrUser[i-1][2])
-            print(arrUser)
-            
-        with open(f'{nama_folder}\\candi.csv', 'r') as file:
-            data_candi = baca_csv(file.name, delimiter=";")
-            for i in range (1,len_lain(data_candi)):
-                for j in range (5):
-                    arrCandi[int(data_candi[i][0])-1][j]=data_candi[i][j]
-                if arrCandi[int(data_candi[i][0])-1][4]!='inf':
-                    arrCandi[int(data_candi[i][0])-1][4] = hapus_space(arrCandi[int(data_candi[i][0])-1][4])
-            print(arrCandi)
-
-        with open(f'{nama_folder}\\bahan_bangunan.csv', 'r') as file:
-            data_bahan = baca_csv(file.name, delimiter=";")
-            for i in range (1,len_lain(data_bahan)):
-                for j in range (3):
-                    arrBahan[i-1][j]=data_bahan[i][j]
-                if arrBahan[i-1][2]!='inf':
-                    arrBahan[i-1][2] = hapus_space(arrBahan[i-1][2])
-            print(arrBahan)
-            return
-
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description="Prosedur untuk memuat data dari file-file dalam suatu folder.")
-    parser.add_argument('nama_folder', type=str, help="Nama folder yang berisi file-file penyimpanan.")
-    args = parser.parse_args()
-    load(args.nama_folder)
-
-def save():
-    global arrUser
-    global arrCandi
-    global arrBahan
-    #Cek apakah folder ada
-    nama_folder = str(input(""))
-    path = f'save\\{nama_folder}'
-
-    print("Saving...")
-    if not os.path.exists(path):
-        print(f"Membuat folder save/{nama_folder}...")
-        os.mkdir(path)
-    print(f"Berhasil menyimpan data di folder {nama_folder}")
-    with open(f"{path}\\user.csv", "a") as file:
-        skip = True
-        tulis_header("username;password;role",f"{path}\\user.csv")
-        for row in range (102):
-            for col in range (3):
-                if arrUser[row][col]!='inf':
-                    if col<2:
-                        file.write(str(arrUser[row][col]) + ";")
-                    else:
-                        file.write(str(arrUser[row][col]))
-                    skip = False
-            if not skip:
-                file.write("\n")
-            skip=True
-        
-    with open(f"{path}\\candi.csv", "a") as file:
-        skip = True
-        tulis_header("id;pembuat;pasir;batu;air",f"{path}\\candi.csv")
-        for row in range (100):
-            for col in range (5):
-                if arrCandi[row][col]!='inf':
-                    if col<4:
-                        file.write(str(arrCandi[row][col]) + ";")
-                    else:
-                        file.write(str(arrCandi[row][col]))
-                    skip = False
-            if not skip:
-                file.write("\n")
-            skip=True
-
-    with open(f"{path}\\bahan_bangunan.csv", "a") as file:
-        skip = True
-        tulis_header("nama;deskripsi;jumlah",f"{path}\\bahan_bangunan.csv")
-        for row in range (3):
-            for col in range (3):
-                if arrBahan[row][col]!='inf':
-                    if col<2:
-                        file.write(str(arrBahan[row][col]) + ";")
-                    else:
-                        file.write(str(arrBahan[row][col]))
-                    skip = False
-            if not skip:
-                file.write("\n")
-            skip=True
-    return
