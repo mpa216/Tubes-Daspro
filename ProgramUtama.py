@@ -772,7 +772,7 @@ while on :
         if cmd == "logout" :
             logout()
         elif cmd == "summonjin" :
-            print(length(arrUser))
+            #print(length(arrUser))
             tambahJin()
         elif cmd == "hapusjin" :
             hilangkanjin()
