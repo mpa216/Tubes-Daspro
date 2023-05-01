@@ -146,12 +146,13 @@ def login():
             for i in range (0,102):
                 if arrUser[i][0]==username_login:
                     if arrUser[i][1]==password_login:
-                        kondisi = (f'Selamat datang, {username_login}!\nMasukkan command “help” untuk daftar command yang dapat kamu panggil.')
-                        userAktif = str(username_login)
-                        roleAktif = str(arrUser[i][2])
-                        cobalogin+=1
+                        cobalogin+=1                        
                         if cobalogin>1:
                             kondisi = (f"Anda telah login dengan username {userAktif}, silahkan lakukan “logout” sebelum melakukan login kembali.  ")
+                        else:    
+                            kondisi = (f'Selamat datang, {username_login}!\nMasukkan command “help” untuk daftar command yang dapat kamu panggil.')
+                            userAktif = str(username_login)
+                            roleAktif = str(arrUser[i][2])
                         udahlogin = True
                         break
                     else:
