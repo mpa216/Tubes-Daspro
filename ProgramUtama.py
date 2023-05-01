@@ -81,7 +81,7 @@ def save():
     global arrCandi
     global arrBahan
     #Cek apakah folder ada
-    nama_folder = str(input(""))
+    nama_folder = str(input("Masukkan nama folder: "))
     path = f'save\\{nama_folder}'
 
     print("Saving...")
