@@ -562,7 +562,7 @@ def exit():
     while salah :
         simpan = input("Apakah Anda mau melakukan penyimpanan file yang sudah diubah? (y/n) ")
         if simpan == "y" : 
-            #save()
+            save()
             sys.exit()
         elif simpan == "n" :
             sys.exit()
@@ -659,6 +659,8 @@ while on :
             help()
         elif cmd == "exit" :
             exit()
+        elif cmd == "save" :
+            save()
         else :
             print("Anda belum login, silahkan login terlebih dahulu")
     while roleAktif == "bandung_bondowoso" :
@@ -689,6 +691,8 @@ while on :
             help()
         elif cmd == "login" :
             login()
+        elif cmd == "save" :
+            save()
         else :
             print("Anda tidak memiliki akses ke fitur tersebut")
 
@@ -707,6 +711,8 @@ while on :
             help()
         elif cmd == "login" :
             login()
+        elif cmd == "save" :
+            save()
         else :
             print("Anda tidak memiliki akses ke fitur tersebut")
     while roleAktif == "jin_pengumpul" :
@@ -720,6 +726,8 @@ while on :
             exit()
         elif cmd == "login" :
             login()
+        elif cmd == "save" :
+            save()
         else :
             print("Anda tidak memiliki akses ke fitur tersebut")
     while roleAktif == "jin_pembangun" :
@@ -734,6 +742,8 @@ while on :
             exit()
         elif cmd == "login" :
             login()
+        elif cmd == "save" :
+            save()
         else :
             print("Anda tidak memiliki akses ke fitur tersebut")
 
