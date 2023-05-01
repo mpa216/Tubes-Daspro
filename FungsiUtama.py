@@ -107,7 +107,6 @@ def baca_csv(file_path, delimiter=';'):
     rows = ['inf']
     with open(file_path, 'r') as file:
         line = file.readline()
-        print(line)
         while line:
             row = ['inf']
             cell_value = ''
@@ -134,7 +133,6 @@ def hapus_space(line):
     baris = ''
     for i in range (len(line)-2):
         baris = baris+arr[i]
-    print(arr)
     return baris
 
 def tulis_header(header,path):
