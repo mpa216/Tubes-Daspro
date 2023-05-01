@@ -33,13 +33,16 @@ def load(nama_folder):
     global arrUser
     global arrCandi
     global arrBahan
+    global on
     #Cek apakah folder ada
     if not os.path.exists(nama_folder):
         print(f"Folder '{nama_folder}' tidak ditemukan.")
+        on = False
         return
 
     #Load data dari file-file dalam folder
     else:
+        on = True
         with open(f'{nama_folder}\\user.csv', 'r') as file:
             data_user = baca_csv(file.name, delimiter=";")
             for i in range (1,len_lain(data_user)):
@@ -189,7 +192,8 @@ def tambahJin():
                     break
                 else:
                     tambah = True
-        
+        if tambah:
+            append_lain(arrUser,[username_jin,password_jin,tipe])
     else:
         print("Jin sudah Penuh")
     return
