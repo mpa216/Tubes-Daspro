@@ -153,6 +153,7 @@ def login():
                             kondisi = (f'Selamat datang, {username_login}!\nMasukkan command “help” untuk daftar command yang dapat kamu panggil.')
                             userAktif = str(username_login)
                             roleAktif = str(arrUser[i][2])
+
                         udahlogin = True
                         break
                     else:
