@@ -4,7 +4,7 @@ import sys
 import argparse
 import os
 
-
+on = True
 arrUser     = [[str("inf") for cols in range (3)] for rows in range(102)] # array 2 dimensi (102 x 3) dengan index 0 dimiliki Bandung, 1 dimiilki Roro, dan 2-101 milik para jin
 # arrUser[x][0], arrUser[x][1], arrUser[x][2] = Username, Password, Role
 # Contoh [["Si Cakep","Saya cakep","Saya Cakep"], ..... , ["Bandung","Bondowoso","Antagonist"] ,["Roro","Jonggrang","Protagonist"]]
@@ -748,10 +748,8 @@ def hilangkanjin():
     return
 
 
-
-
-on = True
-while on :
+  
+  while on :
     while roleAktif == "" :
         # print(arrUser)
         cmd = input("cmd: ")
